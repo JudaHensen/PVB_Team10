@@ -1,0 +1,45 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "move",
+            "id": "a3da7c9b-c6c7-4265-a2d1-924abd82c067",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "dd171c5d-1ab4-45c5-97bc-9027ac177182",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d7499c8f-2e68-4c0a-a739-9d7c06717d0c",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ps4Controls",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "ps4Controls",
+            "bindingGroup": "ps4Controls",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
