@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SonarMesh : MonoBehaviour
 {
     // Creates sonar mesh
     public SonarMesh(float width, float height, float depth, Transform transform)
     {
+        if(width <= 0 || height == 0 || depth <= 0)
+        {
+            throw new Exception("Could not create SonarSweeper.\nWidth, height or depth is either 0 or lower than 0.");
+        }
+
         Debug.Log("Sonar mesh is being created.");
 
         Mesh mesh = new Mesh();

@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MineLocation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string uniqueID;
+    public Vector2 location;
+    
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Debug.Log("Start mine");
+        location = new Vector2(transform.position.x, transform.position.z);
+
+        uniqueID = Guid.NewGuid().ToString();
+        Debug.Log($"UniqueID: {uniqueID}");
     }
 }
