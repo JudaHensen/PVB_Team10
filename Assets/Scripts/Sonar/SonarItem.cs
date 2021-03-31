@@ -21,6 +21,17 @@ public class SonarItem : MonoBehaviour
         // Setup notification sound.
         _soundPlayer = GetComponent<AudioSource>();
         _soundPlayer.clip = _sound;
+
+        _soundPlayer.pitch = 1 + (1 - _foundDistance) * .7f;
+        _soundPlayer.Play();
+    }
+
+    public void UpdateData(float distance)
+    {
+        timeStamp = Time.realtimeSinceStartup;
+        _foundDistance = distance;
+
+        _soundPlayer.pitch = 1 + (1 - _foundDistance)*.7f;
         _soundPlayer.Play();
     }
 

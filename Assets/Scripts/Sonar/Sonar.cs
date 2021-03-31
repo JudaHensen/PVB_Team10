@@ -20,6 +20,11 @@ public class Sonar : MonoBehaviour
     [SerializeField]
     private AudioClip _sound;
     [SerializeField]
+    [Header("Delay in seconds before the same mine can be found again.")]
+    private float _foundDelay;
+    [SerializeField]
+    private float _destroyRange;
+    [SerializeField]
     private GameObject _sonarItemPrefab;
     private Transform _sonarItemParent;
     private List<SonarItem> _foundMines;
@@ -50,6 +55,18 @@ public class Sonar : MonoBehaviour
     // Update sonar user interface.
     private void UpdateSonar()
     {
+        // Remove mines out of range.
+        for(int i = _foundMines.Count-1; i >= 0; --i)
+        {
+            Transform mine = _foundMines[i].transform;
+            float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(mine.transform.position.x, mine.transform.position.z));
+            if (distance < 0) distance = -distance;
+            if (distance >= _destroyRange)
+            {
+                Destroy(mine.gameObject);
+                _foundMines.RemoveAt(i);
+            }
+        }
 
     }
 
@@ -57,16 +74,27 @@ public class Sonar : MonoBehaviour
     {
         if(collider.tag.ToLower() == "mine")
         {
-            //Debug.Log("Found a mine!");
+            // Calculate distance.
+            float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(collider.transform.position.x, collider.transform.position.z));
+            if (distance < 0) distance = -distance;
+            distance /= _range;
+
+            // Check if mine is newly found.
             if (!ContainsUniqueID(collider.GetComponent<MineLocation>().uniqueID))
             {
+                
                 GameObject sonarItem = Instantiate(_sonarItemPrefab, new Vector3(0, 0, 0), Quaternion.identity);
                 sonarItem.transform.parent = _sonarItemParent;
-                sonarItem.GetComponent<SonarItem>().InsertData(collider.gameObject, 10, _sound);
+
+                sonarItem.GetComponent<SonarItem>().InsertData(collider.gameObject, distance, _sound);
                 _foundMines.Add(sonarItem.GetComponent<SonarItem>());
             }
+            // Check if mine is found and meets requirements.
+            else if (Time.realtimeSinceStartup >= _foundMines[GetMineIndex(collider.GetComponent<MineLocation>().uniqueID)].timeStamp + _foundDelay)
+            {
+                _foundMines[GetMineIndex(collider.GetComponent<MineLocation>().uniqueID)].UpdateData(distance);
+            }
             else Debug.Log("Mine with uniqueID has already been spotted.");
-            
         }
     }
 
@@ -74,7 +102,7 @@ public class Sonar : MonoBehaviour
     {
         if (collider.tag.ToLower() == "mine")
         {
-            //Debug.Log("Left a mine!");
+            // Maybe make a mine available to find again?
         }
     }
 
@@ -86,6 +114,15 @@ public class Sonar : MonoBehaviour
             if (_foundMines[i].GetUniqueID() == uniqueID) return true;
         }
         return false;
+    }
+
+    private int GetMineIndex(string uniqueID)
+    {
+        for (int i = 0; i < _foundMines.Count; ++i)
+        {
+            if (_foundMines[i].GetUniqueID() == uniqueID) return i;
+        }
+        throw new Exception("Could not find index!");
     }
 
 }
