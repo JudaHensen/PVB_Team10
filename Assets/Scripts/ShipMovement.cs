@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
 {
+    [SerializeField]
+    private float SteerPower = 50f;
+    [SerializeField]
+    private float Power = 1000f;
+
     public Transform Motor;
-    public float SteerPower = 0.05f;
-    public float Power = 5f;
-    public float MaxSpeed = 10f;
 
     public Rigidbody ShipRb;
 
@@ -20,20 +22,14 @@ public class ShipMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var forceDirection = transform.forward;
-        var Steer = 0;
-        var StartPower = 0;
 
-        if (Input.GetKey(KeyCode.A))
-            Steer = 1;
-        if (Input.GetKey(KeyCode.D))
-            Steer = -1;
-        if (Input.GetKey(KeyCode.W))
-            StartPower = 1;
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        ShipRb.AddForceAtPosition(Steer * transform.right * SteerPower , Motor.position);
+        ShipRb.AddForceAtPosition(transform.right * h/-1 * SteerPower * Time.fixedDeltaTime, Motor.position);
+        ShipRb.AddForce(transform.forward * v * Power * Time.fixedDeltaTime);
 
-        ShipRb.AddForceAtPosition(StartPower * transform.forward * Power, Motor.position);
+        Debug.Log(ShipRb.velocity);
 
         
 
