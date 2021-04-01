@@ -7,7 +7,7 @@ public class ShipMovement : MonoBehaviour
     [SerializeField]
     private float SteerPower = 50f;
     [SerializeField]
-    private float Power = 1000f;
+    private float Power = 100000f;
 
     public Transform Motor;
 
@@ -31,7 +31,14 @@ public class ShipMovement : MonoBehaviour
 
         Debug.Log(ShipRb.velocity);
 
-        
+        if(v == 0)
+        {
+            SteerPower = 0.1f;
+        }
+        else
+        {
+            SteerPower = 10f;
+        }
 
 
     }
