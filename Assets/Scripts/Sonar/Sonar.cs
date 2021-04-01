@@ -14,7 +14,12 @@ public class Sonar : MonoBehaviour
     [SerializeField]
     private float _speed;
     [SerializeField]
-    private bool _visual;
+    private bool _visible;
+
+    public event Action<float> SetMaximumRange;
+    public event Action<float, float, Vector2> UpdateSonarUI;
+    public event Action<string, List<SonarItem>> DetectMine;
+    public event Action<string, List<SonarItem>> RemoveMine;
 
     // Found mines
     [SerializeField]
@@ -31,19 +36,30 @@ public class Sonar : MonoBehaviour
 
     private void Start()
     {
-        // Create Sonar mesh.
-        // speed / 24 frames p/s * 2.5 to make sure the sweeper won't skip any mines.
+        // Create Sonar mesh
+        // _speed / 24 frames p/s * 2.5 to make sure the sweeper won't skip any mines.
         SonarMesh sonarMesh = new SonarMesh(_speed / 24 * 2.5f, _height, _range, this.transform);
-        GetComponent<MeshRenderer>().enabled = _visual;
+        GetComponent<MeshRenderer>().enabled = _visible;
 
         _foundMines = new List<SonarItem>();
-        _sonarItemParent = transform.parent.Find("SonarItems");
+        _sonarItemParent = transform.Find("SonarItems");
+
+        SetMaximumRange(_range);
     }
 
+    #region Updates
     private void Update()
     {
         UpdateSweeper();
         UpdateSonar();
+        try {
+            UpdateSonarUI(
+                _speed * Time.deltaTime, 
+                transform.parent.eulerAngles.y, 
+                new Vector2(transform.parent.position.x, transform.parent.position.z));
+        } catch(Exception e) {
+            // Triggers when no class assigned a function to the event.
+        }
     }
 
     // Update physical sweeper.
@@ -58,40 +74,53 @@ public class Sonar : MonoBehaviour
         // Remove mines out of range.
         for(int i = _foundMines.Count-1; i >= 0; --i)
         {
-            Transform mine = _foundMines[i].transform;
-            float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(mine.transform.position.x, mine.transform.position.z));
+            MineLocation mine = _foundMines[i].GetMineLocation();//.transform;
+            // might be fine as long as the ship is the sonar's parent
+            float distance = Vector2.Distance(
+                new Vector2( transform.parent.position.x, transform.parent.position.z), 
+                new Vector2(mine.location.x, mine.location.y) );
+
             if (distance < 0) distance = -distance;
             if (distance >= _destroyRange)
             {
-                Destroy(mine.gameObject);
+                string uniqueID = _foundMines[i].GetUniqueID();
                 _foundMines.RemoveAt(i);
+                
+                // Send removed mine.
+                RemoveMine(uniqueID, _foundMines);
             }
         }
 
     }
+    #endregion
 
+    #region Collissions
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.tag.ToLower() == "mine")
         {
-            // Calculate distance.
+            // Calculate distance
             float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(collider.transform.position.x, collider.transform.position.z));
             if (distance < 0) distance = -distance;
             distance /= _range;
 
-            // Check if mine is newly found.
+            // Check if mine is newly found
             if (!ContainsUniqueID(collider.GetComponent<MineLocation>().uniqueID))
             {
-                
-                GameObject sonarItem = Instantiate(_sonarItemPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                // Add mine to list
+                GameObject sonarItem = Instantiate(_sonarItemPrefab, Vector3.zero, Quaternion.identity);
                 sonarItem.transform.parent = _sonarItemParent;
 
                 sonarItem.GetComponent<SonarItem>().InsertData(collider.gameObject, distance, _sound);
                 _foundMines.Add(sonarItem.GetComponent<SonarItem>());
+                
+                // Send added mine
+                DetectMine(sonarItem.GetComponent<SonarItem>().GetUniqueID(), _foundMines);
             }
-            // Check if mine is found and meets requirements.
+            // Check if mine is found and meets requirements
             else if (Time.realtimeSinceStartup >= _foundMines[GetMineIndex(collider.GetComponent<MineLocation>().uniqueID)].timeStamp + _foundDelay)
             {
+                // Update mine
                 _foundMines[GetMineIndex(collider.GetComponent<MineLocation>().uniqueID)].UpdateData(distance);
             }
             else Debug.Log("Mine with uniqueID has already been spotted.");
@@ -105,7 +134,9 @@ public class Sonar : MonoBehaviour
             // Maybe make a mine available to find again?
         }
     }
+    #endregion
 
+    #region SearchFunctions
     // Checks if a mine with uniqueID already has been found.
     private bool ContainsUniqueID(string uniqueID)
     {
@@ -124,5 +155,6 @@ public class Sonar : MonoBehaviour
         }
         throw new Exception("Could not find index!");
     }
+    #endregion
 
 }

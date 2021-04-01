@@ -13,8 +13,6 @@ public class SonarMesh : MonoBehaviour
             throw new Exception("Could not create SonarSweeper.\nWidth, height or depth is either 0 or lower than 0.");
         }
 
-        Debug.Log("Sonar mesh is being created.");
-
         Mesh mesh = new Mesh();
 
         Vector3[] vertices = new Vector3[6];
@@ -47,27 +45,27 @@ public class SonarMesh : MonoBehaviour
         triangles[3] = 5;
         triangles[4] = 4;
         triangles[5] = 3;
-        // Left1
+        // Left upper
         triangles[6] = 0;
         triangles[7] = 3;
         triangles[8] = 1;
-        // Right1
+        // Right upper
         triangles[9] = 0;
         triangles[10] = 2;
         triangles[11] = 3;
-        // Left2
+        // Left lower
         triangles[12] = 3;
         triangles[13] = 4;
         triangles[14] = 1;
-        // Right2
+        // Right lower
         triangles[15] = 5;
         triangles[16] = 3;
         triangles[17] = 2;
-        // Back1
+        // Back left
         triangles[18] = 4;
         triangles[19] = 2;
         triangles[20] = 1;
-        // Back2
+        // Back right
         triangles[21] = 4;
         triangles[22] = 5;
         triangles[23] = 2;
@@ -81,8 +79,6 @@ public class SonarMesh : MonoBehaviour
 
         transform.GetComponent<MeshFilter>().mesh = mesh;
         transform.GetComponent<MeshCollider>().sharedMesh = transform.GetComponent<MeshFilter>().mesh;
-        
-        Debug.Log("Sonar mesh created.");
     }
 
 

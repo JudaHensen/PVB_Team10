@@ -7,14 +7,21 @@ public class MineLocation : MonoBehaviour
 {
     public string uniqueID;
     public Vector2 location;
-    
+
+    [SerializeField]
+    private bool _visible;
 
     private void Start()
     {
-        Debug.Log("Start mine");
         location = new Vector2(transform.position.x, transform.position.z);
 
         uniqueID = Guid.NewGuid().ToString();
-        Debug.Log($"UniqueID: {uniqueID}");
+
+        GetComponent<MeshRenderer>().enabled = _visible;
+    }
+
+    private void Update()
+    {
+        location = new Vector2(transform.position.x, transform.position.z);
     }
 }

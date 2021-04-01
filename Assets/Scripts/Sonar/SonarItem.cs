@@ -40,4 +40,9 @@ public class SonarItem : MonoBehaviour
         return _mine.GetComponent<MineLocation>().uniqueID;
     }
 
+    public MineLocation GetMineLocation()
+    {
+        return _mine.GetComponent<MineLocation>();
+    }
+
 }
