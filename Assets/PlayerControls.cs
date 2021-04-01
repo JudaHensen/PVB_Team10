@@ -22,7 +22,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""f633f6c3-27fa-4f70-8548-34102da44124"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -30,7 +30,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""Rotate"",
                     ""type"": ""Value"",
                     ""id"": ""37489fea-c9fb-4060-bc52-af20033f9cd7"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
