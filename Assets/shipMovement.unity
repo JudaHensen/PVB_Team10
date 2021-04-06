@@ -686,7 +686,7 @@ Rigidbody:
   m_GameObject: {fileID: 1153567896}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 20
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -795,6 +795,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3343933f91dda04e902149ae50603f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipPosition: {x: 0, y: 0, z: 0}
+  minPosition: {x: 0, y: 0, z: 0}
+  maxPosition: {x: 0, y: 0, z: 0}
+  IsInArea: 1
 --- !u!1 &1363368828
 GameObject:
   m_ObjectHideFlags: 0

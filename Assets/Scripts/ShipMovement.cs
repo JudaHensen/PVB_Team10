@@ -6,8 +6,8 @@ using System;
 
 public class ShipMovement : MonoBehaviour
 {
-    private float SteerPower = 50f;
-    private float Power = 1000000;
+    private float SteerPower;
+    private float Power = 1000f;
 
     public Transform Motor;
 
@@ -29,7 +29,7 @@ public class ShipMovement : MonoBehaviour
     {
         _val.x /= 10;
         _move = _val;
-        Debug.Log(_move);
+       // Debug.Log(_move);
     }
     private void FixedUpdate()
     {
@@ -38,16 +38,23 @@ public class ShipMovement : MonoBehaviour
         
         // Steering Movement
         ShipRb.AddForceAtPosition(-_move.x * transform.right * SteerPower * Time.fixedDeltaTime, Motor.position);
-        
-        if(ShipRb.velocity.z == 0)
+
+        float velocity = 0;
+        if (ShipRb.velocity.x < 0) velocity += -ShipRb.velocity.x;
+        else velocity += ShipRb.velocity.x;
+        if (ShipRb.velocity.z < 0) velocity += -ShipRb.velocity.z;
+        else velocity += ShipRb.velocity.z;
+
+        if (velocity <= 0.2f)
+
         {
-            SteerPower = 0.1f;
+            SteerPower = 1f;
         }
         else
         {
-            SteerPower = 10f;
+            SteerPower = 1 + (velocity * 120);
         }
-
-
+        Debug.Log(velocity);
+        
     }
 }
