@@ -6,17 +6,33 @@
             "id": "72783af8-d71f-4750-a917-d422ba065309",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "TriggerLeft",
                     "type": "Value",
                     "id": "f633f6c3-27fa-4f70-8548-34102da44124",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TriggerRight",
+                    "type": "Value",
+                    "id": "3f60351f-f49a-4390-80be-058427c934cf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "StickRight",
+                    "type": "Value",
+                    "id": "37489fea-c9fb-4060-bc52-af20033f9cd7",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Rotate",
+                    "name": "StickLeft",
                     "type": "Value",
-                    "id": "37489fea-c9fb-4060-bc52-af20033f9cd7",
+                    "id": "88225ac6-fed2-4ae0-ae72-7267156b9dc1",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -42,11 +58,11 @@
                 {
                     "name": "",
                     "id": "093cf1f8-8fd7-40ae-b457-db9b4e54bb23",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "TriggerLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -68,7 +84,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotate",
+                    "action": "StickRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -80,6 +96,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "016f4042-2abd-4c7c-a6e0-bfe936cb8ce1",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StickLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f9f0057-2f3b-4b0f-a243-b00a1128a646",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
