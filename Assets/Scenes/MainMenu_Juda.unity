@@ -2890,8 +2890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6dfbe5344c2e984d83e1dd82aa9d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minimumInput: 0.2
-  _interactDelay: 0.1
+  _minimumInput: 0.1
+  _interactDelay: 0.5
 --- !u!1 &1382642538
 GameObject:
   m_ObjectHideFlags: 0

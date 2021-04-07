@@ -40,7 +40,7 @@ namespace CustomUtilities
 
         public void SetTime(float time) { _maxTime = time; }
 
-        private void Update()
+        public void Update()
         {
             if (_active) _currentTime += Time.deltaTime;
 

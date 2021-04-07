@@ -85,6 +85,10 @@ namespace MainMenu
                 _currentMenu.Interact();
             }
         }
+        void Update()
+        {
+            _delay.Update();
+        }
 
     }
 }
