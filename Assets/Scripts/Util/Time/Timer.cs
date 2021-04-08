@@ -42,9 +42,9 @@ namespace CustomUtilities
 
         public void Update()
         {
-            if (_active) _currentTime += Time.deltaTime;
+            if (_active && !_hold) _currentTime += Time.deltaTime;
 
-            if (_currentTime >= _maxTime)
+            if (_currentTime >= _maxTime && !_hold)
             {
                 _hold = true;
                 try

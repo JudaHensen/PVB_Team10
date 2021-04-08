@@ -15,6 +15,7 @@ namespace MainMenu
 
         private void Start()
         {
+            Debug.Log(GetComponent<RectTransform>().anchoredPosition.y);
             _name = gameObject.name;
 
             // Find all interactables
@@ -31,23 +32,35 @@ namespace MainMenu
             _currentInteractable.Highlight();
         }
         
+        public void SetActive()
+        {
+            _interactableIndex = 0;
+            _currentInteractable = _interactables[_interactableIndex];
+
+            //Debug.Log($"Active Menu: {_name}");
+        }
 
         public void Next()
         {
             Debug.Log("Next interactable!");
-            _interactableIndex++;
+            _currentInteractable.DisableHighlight();
+
+            ++_interactableIndex;
             _interactableIndex %= _interactables.Count;
 
+            _currentInteractable = _interactables[_interactableIndex];
             _currentInteractable.Highlight();
         }
 
         public void Previous()
         {
             Debug.Log("Previous interactable!");
-            _interactableIndex--;
-            if (_interactableIndex < 0) _interactableIndex = _interactables.Count - 1;
-            _currentInteractable = _interactables[_interactableIndex];
+            _currentInteractable.DisableHighlight();
 
+            --_interactableIndex;
+            if (_interactableIndex < 0) _interactableIndex = _interactables.Count - 1;
+
+            _currentInteractable = _interactables[_interactableIndex];
             _currentInteractable.Highlight();
         }
 
@@ -55,9 +68,15 @@ namespace MainMenu
 
         public void Right() { _currentInteractable.Right(); }
 
-        public void Interact() { _currentInteractable.Interact(); }
+        public string Interact() { return _currentInteractable.Interact(); }
 
-        public void Announce() { Debug.Log(_name); }
+        public Vector2 GetPosition()
+        {
+            RectTransform rect = GetComponent<RectTransform>();
+            return new Vector2(rect.anchoredPosition.x, rect.anchoredPosition.y);
+        }
+
+        public string GetName() { return _name; }
 
     }
 }

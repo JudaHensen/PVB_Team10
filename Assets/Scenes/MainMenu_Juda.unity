@@ -550,6 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: 
 --- !u!1 &390999349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731763442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1478,6 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: OpenMenu:Credits
 --- !u!1 &871337484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,6 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: OpenMenu:Main
 --- !u!114 &898536427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1830,6 +1833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: 
 --- !u!1 &931523761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: 
 --- !u!1 &1011561091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: OpenMenu:Main
 --- !u!1 &1053735338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: OpenMenu:Settings
 --- !u!1 &1228683018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,6 +3469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: OpenMenu:Start
 --- !u!1 &1705952197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,9 +3555,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705952197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b027a9daa6a9ae24bb0797e88b710918, type: 3}
+  m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interaction: LoadScene:AboveOcean
 --- !u!1 &1843316486
 GameObject:
   m_ObjectHideFlags: 0
