@@ -40,7 +40,7 @@ namespace MainMenu
         // Scrolls to the given position
         private void UpdateScrollPosition()
         {
-            _sinRotation += _scrollSpeed;
+            _sinRotation += _scrollSpeed * Time.deltaTime;
             if (_sinRotation >= 90)
             {
                 _active = false;
