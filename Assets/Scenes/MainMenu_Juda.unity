@@ -547,10 +547,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 351310933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
+  m_Script: {fileID: 11500000, guid: a3ef1a5b6a0ed924c9465ca223c9e136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interaction: 
+  _valueName: Volume
+  _defaultValue: 50
+  _valueIncrease: 5
 --- !u!1 &390999349
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +937,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1059,7 +1062,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1750,7 +1753,7 @@ GameObject:
   - component: {fileID: 919309446}
   - component: {fileID: 919309448}
   - component: {fileID: 919309447}
-  - component: {fileID: 919309449}
+  - component: {fileID: 919309450}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -1821,7 +1824,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919309445}
   m_CullTransparentMesh: 0
---- !u!114 &919309449
+--- !u!114 &919309450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1830,10 +1833,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 919309445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
+  m_Script: {fileID: 11500000, guid: 39d72cc56a39ae64c8c1112c2dc8d057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interaction: 
+  _valueName: Subtitles
+  _defaultValue: 1
 --- !u!1 &931523761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,10 +2002,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 932033453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
+  m_Script: {fileID: 11500000, guid: a3ef1a5b6a0ed924c9465ca223c9e136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interaction: 
+  _valueName: Sensivity
+  _defaultValue: 1
+  _valueIncrease: 0.1
 --- !u!1 &1011561091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,10 +2654,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 903263193}
   m_HandleRect: {fileID: 931523762}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.1
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

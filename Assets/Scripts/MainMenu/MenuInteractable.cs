@@ -16,11 +16,11 @@ namespace MainMenu
         [Header("Leave empty to do nothing.")]
 
         [Header("String of text that devines simple preprogrammed actions.")]
-        private string _interaction;
+        protected string _interaction;
 
-        private string _name;
+        protected string _name;
 
-        private void Start()
+        protected virtual void Start()
         {
             _name = gameObject.name;
         }
