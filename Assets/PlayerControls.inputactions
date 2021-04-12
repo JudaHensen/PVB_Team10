@@ -379,46 +379,7 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "Test",
-            "id": "e967d3c8-b79b-41c2-bc04-3d1a902c7c70",
-            "actions": [
-                {
-                    "name": "TriggerLeft",
-                    "type": "PassThrough",
-                    "id": "ab25db21-b5f1-421a-98b6-604fc907757d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "3589d0c7-d0e5-433f-9f59-081d3dda1fee",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "New control scheme",
-                    "action": "TriggerLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "New control scheme",
-            "bindingGroup": "New control scheme",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }
