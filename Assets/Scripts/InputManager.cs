@@ -9,30 +9,40 @@ public class InputManager : MonoBehaviour
 
     public PlayerControls controls;
 
-    public Action<Vector2> StickLeft;
-    public Action<Vector2> StickRight;
+    public Vector2 StickLeft;
+    public Vector2 StickRight;
 
-    public Action<float> TriggerLeft;
-    public Action<float> TriggerRight;
+    public float TriggerLeft;
+    public float TriggerRight;
 
     public Action ToggleMenu;
     public Action Interact;
     
     public Action<QuickTimeInputKey> QuickTimeInput;
 
+
     void Awake()
     {
+
         controls = new PlayerControls();
 
         // Gameplay Inputs
         controls.Gameplay.Interact.performed += ctx => Interact();
         controls.Gameplay.OpenMenu.performed += ctx => ToggleMenu();
 
-        controls.Gameplay.TriggerLeft.performed += ctx => LeftTrigger(ctx.ReadValue<float>());
-        controls.Gameplay.TriggerRight.performed += ctx => RightTrigger(ctx.ReadValue<float>());
+        // TRIGGERS
+        controls.Gameplay.TriggerLeft.performed += ctx => TriggerLeft = ctx.ReadValue<float>();
+        controls.Gameplay.TriggerLeft.canceled += ctx => TriggerLeft = 0f;
 
-        controls.Gameplay.StickLeft.performed += ctx => StickLeft(ctx.ReadValue<Vector2>());
-        controls.Gameplay.StickRight.performed += ctx => StickRight(ctx.ReadValue<Vector2>());
+        controls.Gameplay.TriggerRight.performed += ctx => TriggerRight = ctx.ReadValue<float>();
+        controls.Gameplay.TriggerRight.canceled += ctx => TriggerRight = 0f;
+
+        // STICKS
+        controls.Gameplay.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
+        controls.Gameplay.StickLeft.canceled += ctx => StickLeft = Vector2.zero;
+
+        controls.Gameplay.StickRight.performed += ctx => StickRight = ctx.ReadValue<Vector2>();
+        controls.Gameplay.StickRight.canceled += ctx => StickRight = Vector2.zero;
 
         // QuickTime event inputs
         controls.QuickTime.OpenMenu.performed += ctx => ToggleMenu();
@@ -42,6 +52,7 @@ public class InputManager : MonoBehaviour
         controls.QuickTime.Q3.performed += ctx => QuickTimeInput(QuickTimeInputKey.SOUTH);
         controls.QuickTime.Q4.performed += ctx => QuickTimeInput(QuickTimeInputKey.WEST);
     }
+
 
     // change input mapping depending on gameplay
     public void SetInputMode(InputMode mode)
@@ -61,12 +72,12 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
-        controls.Gameplay.Enable();
+         controls.Gameplay.Enable();
     }
 
     private void OnDisable()
     {
-        controls.Gameplay.Disable();
-        controls.QuickTime.Disable();
+         controls.Gameplay.Disable();
+         controls.QuickTime.Disable();
     }
 }
