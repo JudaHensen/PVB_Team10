@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public enum InputMode { GAMEPLAY, QUICK_TIME }
     public enum QuickTimeInputKey { NORTH, EAST, SOUTH, WEST }
 
     public PlayerControls controls;
@@ -62,10 +61,12 @@ public class InputManager : MonoBehaviour
             case InputMode.GAMEPLAY:
                 controls.Gameplay.Enable();
                 controls.QuickTime.Disable();
+                Debug.Log("Set to GP");
                 break;
             case InputMode.QUICK_TIME:
                 controls.Gameplay.Disable();
                 controls.QuickTime.Enable();
+                Debug.Log("Set to QTE");
                 break;
         }
     }

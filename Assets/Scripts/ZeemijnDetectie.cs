@@ -12,6 +12,7 @@ public class ZeemijnDetectie : MonoBehaviour
 
     private void Start()
     {
+        _input = FindObjectOfType<InputManager>();
         _input.Interact += StartQuickTimeEvent;
     }
     void FixedUpdate()
@@ -28,6 +29,7 @@ public class ZeemijnDetectie : MonoBehaviour
         {
             detectedMine = false;
         }
+        Debug.Log(_input.TriggerLeft);
     }
 
     void StartQuickTimeEvent()
@@ -36,6 +38,7 @@ public class ZeemijnDetectie : MonoBehaviour
         if (detectedMine)
         {
             Debug.Log("Good Test");
+            _input.SetInputMode(InputMode.QUICK_TIME);
         }
     }
 }
