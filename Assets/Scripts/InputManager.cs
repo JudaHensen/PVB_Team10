@@ -26,8 +26,8 @@ public class InputManager : MonoBehaviour
         controls = new PlayerControls();
 
         // Gameplay Inputs
-        controls.Gameplay.Interact.performed += ctx => Interact();
-        controls.Gameplay.OpenMenu.performed += ctx => ToggleMenu();
+        controls.Gameplay.Interact.performed += ctx => CallInteract();
+        controls.Gameplay.OpenMenu.performed += ctx => CallToggleMenu();
 
         // TRIGGERS
         controls.Gameplay.TriggerLeft.performed += ctx => TriggerLeft = ctx.ReadValue<float>();
@@ -50,6 +50,22 @@ public class InputManager : MonoBehaviour
         controls.QuickTime.Q2.performed += ctx => QuickTimeInput(QuickTimeInputKey.EAST);
         controls.QuickTime.Q3.performed += ctx => QuickTimeInput(QuickTimeInputKey.SOUTH);
         controls.QuickTime.Q4.performed += ctx => QuickTimeInput(QuickTimeInputKey.WEST);
+    }
+
+    private void CallToggleMenu()
+    {
+        if(ToggleMenu != null)
+        {
+            ToggleMenu();
+        }
+    }
+
+    private void CallInteract()
+    {
+        if(Interact != null)
+        {
+            Interact();
+        }
     }
 
 
