@@ -61,6 +61,26 @@ namespace CustomUtilities
             }
         }
 
+        public float GetTime()
+        {
+            return _currentTime;
+        }
+
+        public string GetCountdown()
+        {
+            float time, minutes, seconds;
+
+            time = _maxTime - _currentTime;
+            minutes = Mathf.Ceil(time / 60)-1;
+            seconds = Mathf.Floor(time % 60);
+
+            if (minutes < 0) minutes = 0;
+            if (seconds < 0) seconds = 0;
+
+            if(seconds >= 10) return $"{minutes} : {seconds}";
+            return $"{minutes} : 0{seconds}";
+        }
+
     }
 }
 
