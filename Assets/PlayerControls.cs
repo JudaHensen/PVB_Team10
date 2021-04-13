@@ -19,18 +19,34 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""72783af8-d71f-4750-a917-d422ba065309"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""TriggerLeft"",
                     ""type"": ""Value"",
                     ""id"": ""f633f6c3-27fa-4f70-8548-34102da44124"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""TriggerRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""3f60351f-f49a-4390-80be-058427c934cf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""StickRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""37489fea-c9fb-4060-bc52-af20033f9cd7"",
                     ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Rotate"",
+                    ""name"": ""StickLeft"",
                     ""type"": ""Value"",
-                    ""id"": ""37489fea-c9fb-4060-bc52-af20033f9cd7"",
-                    ""expectedControlType"": ""Stick"",
+                    ""id"": ""88225ac6-fed2-4ae0-ae72-7267156b9dc1"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -44,9 +60,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""OpenMenu"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""43908157-3dc6-4db7-876d-88007614aa65"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -55,11 +71,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""093cf1f8-8fd7-40ae-b457-db9b4e54bb23"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""TriggerLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""748d40c9-2525-4756-9c83-43efbeae3ace"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TriggerLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -76,14 +103,80 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a0e2975e-d7de-4311-8ec7-64ebcfdb655f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7b249560-2e22-46f8-8022-3d31875d6463"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotate"",
+                    ""action"": ""StickRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""id"": ""ba5ce287-f775-4a2b-aa52-16c459affbde"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickRight"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""80a150c3-1e12-4a55-b417-f25e0a8fbd43"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""9f077255-f982-48bc-a97d-912be9884635"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9d3bd34a-79cf-488f-bcf7-4b0366e9c85e"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""77be2181-fe13-4b69-a3cf-913aa8f50f91"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -93,6 +186,105 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""OpenMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3166855a-c4cb-4faa-8669-5ec557576eec"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""016f4042-2abd-4c7c-a6e0-bfe936cb8ce1"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""A D Steer"",
+                    ""id"": ""78aa0ffa-29e4-4589-a51b-b4231ab0a3c6"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""9eab9044-fcd5-41ba-983c-11fe93e72524"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""83ef300b-7550-44ac-94d5-ad6e7260abdb"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""dc398605-b539-4d81-91d1-10b70d90762a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""62e38cbe-8d2f-4489-8118-99b5247fb016"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f9f0057-2f3b-4b0f-a243-b00a1128a646"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TriggerRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af54631a-bfee-4311-bfcb-729966743b17"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TriggerRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -206,8 +398,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
-        m_Gameplay_Rotate = m_Gameplay.FindAction("Rotate", throwIfNotFound: true);
+        m_Gameplay_TriggerLeft = m_Gameplay.FindAction("TriggerLeft", throwIfNotFound: true);
+        m_Gameplay_TriggerRight = m_Gameplay.FindAction("TriggerRight", throwIfNotFound: true);
+        m_Gameplay_StickRight = m_Gameplay.FindAction("StickRight", throwIfNotFound: true);
+        m_Gameplay_StickLeft = m_Gameplay.FindAction("StickLeft", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_OpenMenu = m_Gameplay.FindAction("OpenMenu", throwIfNotFound: true);
         // QuickTime
@@ -266,16 +460,20 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Gameplay
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_Gameplay_Move;
-    private readonly InputAction m_Gameplay_Rotate;
+    private readonly InputAction m_Gameplay_TriggerLeft;
+    private readonly InputAction m_Gameplay_TriggerRight;
+    private readonly InputAction m_Gameplay_StickRight;
+    private readonly InputAction m_Gameplay_StickLeft;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_OpenMenu;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
         public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Gameplay_Move;
-        public InputAction @Rotate => m_Wrapper.m_Gameplay_Rotate;
+        public InputAction @TriggerLeft => m_Wrapper.m_Gameplay_TriggerLeft;
+        public InputAction @TriggerRight => m_Wrapper.m_Gameplay_TriggerRight;
+        public InputAction @StickRight => m_Wrapper.m_Gameplay_StickRight;
+        public InputAction @StickLeft => m_Wrapper.m_Gameplay_StickLeft;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @OpenMenu => m_Wrapper.m_Gameplay_OpenMenu;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
@@ -287,12 +485,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Rotate.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotate;
-                @Rotate.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotate;
-                @Rotate.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotate;
+                @TriggerLeft.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerLeft;
+                @TriggerLeft.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerLeft;
+                @TriggerLeft.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerLeft;
+                @TriggerRight.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerRight;
+                @TriggerRight.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerRight;
+                @TriggerRight.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerRight;
+                @StickRight.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickRight;
+                @StickRight.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickRight;
+                @StickRight.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickRight;
+                @StickLeft.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickLeft;
+                @StickLeft.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickLeft;
+                @StickLeft.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickLeft;
                 @Interact.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
@@ -303,12 +507,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
-                @Rotate.started += instance.OnRotate;
-                @Rotate.performed += instance.OnRotate;
-                @Rotate.canceled += instance.OnRotate;
+                @TriggerLeft.started += instance.OnTriggerLeft;
+                @TriggerLeft.performed += instance.OnTriggerLeft;
+                @TriggerLeft.canceled += instance.OnTriggerLeft;
+                @TriggerRight.started += instance.OnTriggerRight;
+                @TriggerRight.performed += instance.OnTriggerRight;
+                @TriggerRight.canceled += instance.OnTriggerRight;
+                @StickRight.started += instance.OnStickRight;
+                @StickRight.performed += instance.OnStickRight;
+                @StickRight.canceled += instance.OnStickRight;
+                @StickLeft.started += instance.OnStickLeft;
+                @StickLeft.performed += instance.OnStickLeft;
+                @StickLeft.canceled += instance.OnStickLeft;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
@@ -386,8 +596,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public QuickTimeActions @QuickTime => new QuickTimeActions(this);
     public interface IGameplayActions
     {
-        void OnMove(InputAction.CallbackContext context);
-        void OnRotate(InputAction.CallbackContext context);
+        void OnTriggerLeft(InputAction.CallbackContext context);
+        void OnTriggerRight(InputAction.CallbackContext context);
+        void OnStickRight(InputAction.CallbackContext context);
+        void OnStickLeft(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnOpenMenu(InputAction.CallbackContext context);
     }
