@@ -4,16 +4,15 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public enum InputMode { GAMEPLAY, QUICK_TIME }
     public enum QuickTimeInputKey { NORTH, EAST, SOUTH, WEST }
 
     public PlayerControls controls;
 
-    public Action<Vector2> StickLeft;
-    public Action<Vector2> StickRight;
+    public Vector2 StickLeft;
+    public Vector2 StickRight;
 
-    public Action<float> TriggerLeft;
-    public Action<float> TriggerRight;
+    public float TriggerLeft;
+    public float TriggerRight;
 
     public Action ToggleMenu;
     public Action Interact;
@@ -25,14 +24,16 @@ public class InputManager : MonoBehaviour
         controls = new PlayerControls();
 
         // Gameplay Inputs
-        controls.Gameplay.Interact.performed += ctx => Interact();
-        controls.Gameplay.OpenMenu.performed += ctx => ToggleMenu();
+        controls.Gameplay.Interact.performed += ctx => Interact?.Invoke(); // ?.Invoke() Check of de Action wel gebruikt wordt om errors te voorkomen.
+        controls.Gameplay.OpenMenu.performed += ctx => ToggleMenu?.Invoke();
 
-        controls.Gameplay.TriggerLeft.performed += ctx => LeftTrigger(ctx.ReadValue<float>());
-        controls.Gameplay.TriggerRight.performed += ctx => RightTrigger(ctx.ReadValue<float>());
+        controls.Gameplay.TriggerLeft.performed += ctx => TriggerLeft = ctx.ReadValue<float>();
+        controls.Gameplay.TriggerLeft.canceled += ctx => TriggerLeft = 0f;
+        controls.Gameplay.TriggerRight.performed += ctx => TriggerRight = ctx.ReadValue<float>();
+        controls.Gameplay.TriggerRight.canceled += ctx => TriggerRight = 0f;
 
-        controls.Gameplay.StickLeft.performed += ctx => StickLeft(ctx.ReadValue<Vector2>());
-        controls.Gameplay.StickRight.performed += ctx => StickRight(ctx.ReadValue<Vector2>());
+        controls.Gameplay.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
+        controls.Gameplay.StickRight.performed += ctx => StickRight = ctx.ReadValue<Vector2>();
 
         // QuickTime event inputs
         controls.QuickTime.OpenMenu.performed += ctx => ToggleMenu();
