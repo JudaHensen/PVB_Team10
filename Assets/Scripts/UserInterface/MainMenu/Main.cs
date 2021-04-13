@@ -14,8 +14,13 @@ namespace MainMenu
         [Header("Minimum Joycon range to interact with sliders and buttons.")]
         private float _minimumInput = 0.1f;
         [SerializeField]
+        [Header("Range other direction must be in to activate wanted direction to disable diagonal joystick interaction.")]
+        private float _directionalRange = 0.1f;
+        [SerializeField]
         [Header("Delay between changing buttons and slider values.")]
         private float _interactDelay = 0.15f;
+        [SerializeField]
+        private GameObject _menuScroll;
 
         private List<MainMenu.Menu> _menus = new List<MainMenu.Menu>();
         private Menu _currentMenu;
@@ -40,7 +45,7 @@ namespace MainMenu
 
             // Set first menu to interact with
             _delay = new CustomUtilities.Timer(_interactDelay);
-            _currentMenu = _menus[1]; //<<<<<<<<<<<<<< set to 0
+            _currentMenu = _menus[0];
             _currentMenu.SetActive();
         }
 
@@ -53,52 +58,50 @@ namespace MainMenu
 
         private void JoyconInteract(Vector2 state)
         {
-            if (_delay.Completed())
-            {
-                _delay.Restart();
-
-                if (state.y <= _minimumInput) Up();
-                if (state.y >= _minimumInput) Down();
-                if (state.x <= _minimumInput) Left();
-                if (state.x >= _minimumInput) Right();
-            }
+            if (state.y >= _minimumInput  && Mathf.Abs(state.x) < _directionalRange && _delay.Completed()) Up(state);
+            if (state.y <= -_minimumInput && Mathf.Abs(state.x) < _directionalRange && _delay.Completed()) Down(state);
+            if (state.x <= -_minimumInput && Mathf.Abs(state.y) < _directionalRange && _delay.Completed()) Left(state);
+            if (state.x >= _minimumInput  && Mathf.Abs(state.y) < _directionalRange && _delay.Completed()) Right(state);
         }
 
-        private void Up()
+        private void Up(Vector2 axis)
         {
             _currentMenu.Next();
+            _delay.Restart();
         }
 
-        private void Down()
+        private void Down(Vector2 axis)
         {
             _currentMenu.Previous();
+            _delay.Restart();
         }
 
-        private void Left()
+        private void Left(Vector2 axis)
         {
             _currentMenu.Left();
+            _delay.Restart();
         }
 
-        private void Right()
+        private void Right(Vector2 axis)
         {
             _currentMenu.Right();
+            _delay.Restart();
         }
 
         private void Interact()
         {
+            Debug.Log("Interact!!!");
             if (_delay.Completed())
             {
                 _delay.Restart();
                 string action = _currentMenu.Interact();
                 Debug.Log($"Received action: {action}");
 
-                // Deteremine what the current action means, and act accordingly
-                //<<<<<<< Check if switch checks correct part of the string!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                // Deteremine what the current interaction is, and act accordingly
                 switch( action.Remove(action.IndexOf(":")).ToUpper() )
                 {
                     case "LOADSCENE":
                         string scene = action.Substring(action.IndexOf(":") + 1);
-                        Debug.Log($"Loading scene: {scene}");
                         SceneManager.LoadScene(scene);
                         break;
                     case "OPENMENU":
@@ -109,17 +112,15 @@ namespace MainMenu
                         {
                             if(_menus[i].GetName().ToLower() == menu.ToLower())
                             {
+                                _currentMenu.Deactivate();
                                 _currentMenu = _menus[i];
+                                _currentMenu.SetActive();
                                 break;
                             }
-                            else
-                            {
-                                if (i == _menus.Count-1) Debug.LogError($"Menu: {menu} does not exist!");
-                            }
+                            else if (i == _menus.Count - 1) Debug.LogError($"Menu: {menu} does not exist!");
                         }
 
-                        Debug.Log($"Scrolling to menu: {menu}");
-                        GetComponent<MenuScroll>().ScrollTo(_currentMenu.GetPosition().y);
+                        _menuScroll.GetComponent<MenuScroll>().ScrollTo(_currentMenu.GetPosition().y);
                         break;
                     case "CLOSEGAME":
                         Application.Quit();

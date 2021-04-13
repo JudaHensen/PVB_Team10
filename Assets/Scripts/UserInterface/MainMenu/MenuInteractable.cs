@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MainMenu
 {
@@ -19,37 +20,48 @@ namespace MainMenu
         protected string _interaction;
 
         protected string _name;
+        protected Text _text;
+        protected Color _defaultColor;
 
-        protected virtual void Start()
+        [SerializeField]
+        [Header("Text color when this item is highlighted.")]
+        protected Color _highlightColor = new Color(0,0,0);
+   
+
+        protected virtual void Awake()
         {
             _name = gameObject.name;
+
+            if (GetComponent<Text>() != null) _text = GetComponent<Text>();
+            else _text = transform.Find("Text").GetComponent<Text>();
+
+            _defaultColor = _text.color;
         }
 
 
         public virtual void Left()
         {
-            Debug.Log("Left!");
+            
         }
 
         public virtual void Right()
         {
-            Debug.Log("Right!");
+            
         }
 
         public virtual string Interact()
         {
-            Debug.Log($"Interact! {_interaction}");
             return _interaction;
         }
 
         public virtual void Highlight()
         {
-            //Debug.Log($"Highlighted: {_name}");
+            _text.color = _highlightColor;
         }
 
         public virtual void DisableHighlight()
         {
-
+            _text.color = _defaultColor;
         }
     }
 }

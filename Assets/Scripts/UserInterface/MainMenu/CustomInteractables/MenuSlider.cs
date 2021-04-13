@@ -20,9 +20,9 @@ namespace MainMenu
         private float _currentValue;
         private Slider _slider;
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
 
             if (PlayerPrefs.HasKey(_valueName)) _currentValue = PlayerPrefs.GetFloat(_valueName);
             else _currentValue = _defaultValue;

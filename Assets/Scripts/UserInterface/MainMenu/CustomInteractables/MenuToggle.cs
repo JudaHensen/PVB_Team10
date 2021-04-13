@@ -18,9 +18,9 @@ namespace MainMenu
         private int _currentValue;
         private Slider _slider;
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
 
             if (PlayerPrefs.HasKey(_valueName)) _currentValue = PlayerPrefs.GetInt(_valueName);
             else _currentValue = _defaultValue;

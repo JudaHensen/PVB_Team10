@@ -13,9 +13,8 @@ namespace MainMenu
         private int _interactableIndex = 0;
 
 
-        private void Start()
+        private void Awake()
         {
-            Debug.Log(GetComponent<RectTransform>().anchoredPosition.y);
             _name = gameObject.name;
 
             // Find all interactables
@@ -29,36 +28,40 @@ namespace MainMenu
 
             // Set first interactable to interact with
             _currentInteractable = _interactables[_interactableIndex];
-            _currentInteractable.Highlight();
         }
         
+        // Trigger this everytime this menu becomes the current menu.
         public void SetActive()
         {
             _interactableIndex = 0;
             _currentInteractable = _interactables[_interactableIndex];
-
-            //Debug.Log($"Active Menu: {_name}");
+            _currentInteractable.Highlight();
         }
 
+        public void Deactivate()
+        {
+            _currentInteractable.DisableHighlight();
+        }
+
+        // Selects next MenuInteractable
         public void Next()
         {
-            Debug.Log("Next interactable!");
             _currentInteractable.DisableHighlight();
 
-            ++_interactableIndex;
-            _interactableIndex %= _interactables.Count;
+            --_interactableIndex;
+            if (_interactableIndex < 0) _interactableIndex = _interactables.Count - 1;
 
             _currentInteractable = _interactables[_interactableIndex];
             _currentInteractable.Highlight();
         }
 
+        // Selects previous MenuInteractable
         public void Previous()
         {
-            Debug.Log("Previous interactable!");
             _currentInteractable.DisableHighlight();
 
-            --_interactableIndex;
-            if (_interactableIndex < 0) _interactableIndex = _interactables.Count - 1;
+            ++_interactableIndex;
+            _interactableIndex %= _interactables.Count;
 
             _currentInteractable = _interactables[_interactableIndex];
             _currentInteractable.Highlight();

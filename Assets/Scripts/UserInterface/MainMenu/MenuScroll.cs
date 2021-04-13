@@ -25,11 +25,12 @@ namespace MainMenu
         // Determine which position to scroll to
         public void ScrollTo(float finalPosition)
         {
-            _startPosition = rect.anchoredPosition.y;
+            _startPosition = -rect.anchoredPosition.y;
             _endPosition = finalPosition;
 
             _sinRotation = 0;
             _active = true;
+            Debug.Log($"Scroll from: {_startPosition} to {_endPosition}");
         }
         
         void Update()
@@ -50,9 +51,9 @@ namespace MainMenu
             }
 
             float newPosition = _startPosition;
-            newPosition += (_endPosition - _startPosition) * Mathf.Sin(_sinRotation * Mathf.PI / 180 / 100);
+            newPosition += (_endPosition - _startPosition) * Mathf.Sin( _sinRotation * Mathf.Deg2Rad );
 
-            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, newPosition);
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, -newPosition);
         }
 
     }
