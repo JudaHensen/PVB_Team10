@@ -10,25 +10,25 @@ namespace LevelTransition
         private GameObject _camera;
 
         private Vector3 _startPosition;
-        private Vector3 _startRotation;
+        private Quaternion _startRotation;
 
         private Vector3 _endPosition;
-        private Vector3 _endRotation;
+        private Quaternion _endRotation;
 
-        //private CustomUtilities.Timer _timer;
+        private CustomUtilities.Timer _timer;
         private bool _isActive = false;
         private float _lerpTime;
 
-        public void Adjust(Vector3 position, Vector3 rotation, float time)
+        public void Adjust(Vector3 position, Quaternion rotation, float time)
         {
             _startPosition = _camera.transform.position;
-            _startRotation = new Vector3(_camera.transform.rotation.x, _camera.transform.rotation.y, _camera.transform.rotation.z);
+            _startRotation = _camera.transform.rotation;
 
             _endPosition = position;
             _endRotation = rotation;
 
             _lerpTime = time;
-            //_timer = new CustomUtilities.Timer(_lerpTime);
+            _timer = new CustomUtilities.Timer(_lerpTime);
 
             _isActive = true;
         }
@@ -37,7 +37,6 @@ namespace LevelTransition
         {
             if(_isActive)
             {
-                /*
                 if(_timer.Completed()) {
                     _camera.transform.position = _endPosition;
                     _camera.transform.rotation = _endRotation;
@@ -48,10 +47,9 @@ namespace LevelTransition
 
                     float interpolation = _timer.GetTime() / _lerpTime;
 
-                    _camera.transform. = Vector3.Lerp(_startPosition, _endPosition, interpolation);
-                    _camera.transform.rotation = Quaternion.Lerp(_startRotation, _endRotation, interpolation);
+                    _camera.transform.position = Vector3.Slerp(_startPosition, _endPosition, interpolation);
+                    _camera.transform.rotation = Quaternion.Slerp(_startRotation, _endRotation, interpolation);
                 }
-                */
             }
         }
 
