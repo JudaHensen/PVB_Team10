@@ -904,7 +904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803679696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1153567901}
@@ -1306,7 +1306,6 @@ GameObject:
   - component: {fileID: 1153567898}
   - component: {fileID: 1153567897}
   - component: {fileID: 1153567902}
-  - component: {fileID: 1153567903}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -1322,10 +1321,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153567896}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 20
-  m_AngularDrag: 1
-  m_UseGravity: 1
+  m_Mass: 2
+  m_Drag: 10
+  m_AngularDrag: 5
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 4
@@ -1422,18 +1421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Motor: {fileID: 803679697}
   ShipRb: {fileID: 1153567897}
---- !u!114 &1153567903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153567896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3343933f91dda04e902149ae50603f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1363368828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa3cad85d8362c4c9d01b1f088b1db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StickLeft: {x: 0, y: 0}
+  StickRight: {x: 0, y: 0}
+  TriggerLeft: 0
+  TriggerRight: 0
 --- !u!4 &1363368830
 Transform:
   m_ObjectHideFlags: 0

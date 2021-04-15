@@ -14,28 +14,28 @@ public class ShipMovement : MonoBehaviour
     public Rigidbody ShipRb;
 
     private Vector2 _move = new Vector2();
-
+    
     private InputManager _input;
     void Start()
     {
         _input = FindObjectOfType<InputManager>();
         ShipRb = GetComponent<Rigidbody>();
-
-        _input.Move += SetMove;
     }
 
     // Update is called once per frame
-    private void SetMove(Vector2 _val)
-    {
-        _val.x /= 10;
-        _move = _val;
-       // Debug.Log(_move);
-    }
+    
     private void FixedUpdate()
     {
-        //Forward Movement
-        ShipRb.AddForce(transform.forward * _move.y * Power * Time.fixedDeltaTime);
+        Vector2 dir = new Vector2(_input.StickLeft.x, 0f);
+        _move = dir;
         
+
+
+
+        //Forward Movement
+        ShipRb.AddForce(transform.forward * _input.TriggerRight * Power * Time.fixedDeltaTime);
+        //Back Movement
+        ShipRb.AddForce(transform.forward * -_input.TriggerLeft * Power * Time.fixedDeltaTime);     
         // Steering Movement
         ShipRb.AddForceAtPosition(-_move.x * transform.right * SteerPower * Time.fixedDeltaTime, Motor.position);
 
@@ -52,7 +52,7 @@ public class ShipMovement : MonoBehaviour
         }
         else
         {
-            SteerPower = 1 + (velocity * 120);
+            SteerPower = 1 + (velocity * 5);
         }
         Debug.Log(velocity);
         
