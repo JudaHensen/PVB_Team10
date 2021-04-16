@@ -15,6 +15,6 @@ public class CameraSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camera.
+        
     }
 }
