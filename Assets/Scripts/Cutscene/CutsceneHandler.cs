@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Threading.Tasks;
@@ -20,6 +19,7 @@ namespace Cutscene
 
         private bool _isPlaying = false;
 
+
         private void Start()
         {
             _startCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -32,7 +32,6 @@ namespace Cutscene
 
             GameObject.Find("InputHandler").GetComponent<InputManager>().Interact += StartCutscene;
         }
-
 
         public void StartCutscene()
         {
@@ -66,8 +65,6 @@ namespace Cutscene
 
                 transition.Execute(this);
                 await Task.Delay(transition.GetDelay());
-
-                //Debug.Log($"Transition {transition.GetName()} finished.");
             }
             Debug.Log("Cutscene finished!");
 
@@ -77,7 +74,7 @@ namespace Cutscene
             _cameraReplica = null;
             _currentCamera = null;
 
-            Destroy(transform.Find("CameraReplica").gameObject);
+            Destroy(GameObject.Find("CameraReplica").gameObject);
 
             for (int i = 0; i < _transitions.Count; ++i)
             {
@@ -88,9 +85,9 @@ namespace Cutscene
 
             try {
                 OnFinished();
-            } catch(Exception e) {
+            } catch {
                 // No functions assigned to action
-                Debug.Log(e.Message);
+                //Debug.Log(e.Message);
             }
         }
 

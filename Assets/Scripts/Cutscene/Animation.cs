@@ -13,6 +13,9 @@ namespace Cutscene
 
         [Header("Animation trigger to activate wanted animation.")]
         public string triggerName;
+
+        [Header("Animation trigger delay in miliseconds since transition execution.")]
+        public uint triggerDelay;
     }
 }
 
