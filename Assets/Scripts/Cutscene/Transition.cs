@@ -43,7 +43,7 @@ namespace Cutscene
 #endregion
 
         [Header("List of animations to play for this current transition.")]
-        [SerializeField] private List<Cutscene.Animation> _animations;
+        [SerializeField] private List<Animation> _animations;
 
         protected AdjustCamera _cameraAdjuster;
         
@@ -101,7 +101,7 @@ namespace Cutscene
         }
 
         // Trigger an animation after it's delay
-        protected virtual async void TriggerAnimation(Cutscene.Animation anim)
+        protected virtual async void TriggerAnimation(Animation anim)
         {
             await Task.Delay((int) anim.triggerDelay);
             anim.animator.SetTrigger(anim.triggerName);

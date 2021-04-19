@@ -353,6 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 630814145}
+  - component: {fileID: 630814146}
   m_Layer: 0
   m_Name: Cutscene1
   m_TagString: Untagged
@@ -377,6 +378,23 @@ Transform:
   m_Father: {fileID: 612710788}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &630814146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630814144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd809f9c0866384286a96907603a369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cutsceneName: Test
+  _transitions:
+  - {fileID: 449970865}
+  - {fileID: 636351011}
+  - {fileID: 2097270850}
 --- !u!1 &636351011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,10 +1085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cf5e9fbc887f144bc4d20b6115600b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions:
-  - {fileID: 449970865}
-  - {fileID: 636351011}
-  - {fileID: 2097270850}
+  _cutscenes:
+  - {fileID: 630814144}
 --- !u!4 &1867460583
 Transform:
   m_ObjectHideFlags: 0

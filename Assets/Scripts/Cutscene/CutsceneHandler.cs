@@ -7,15 +7,16 @@ namespace Cutscene
 {
     public class CutsceneHandler : MonoBehaviour
     {
-        [Header("All transitions in chronological order.")]
-        [SerializeField]
-        private List<GameObject> _transitions;
+        [Header("All cutscenes.")]
+        [SerializeField] private List<GameObject> _cutscenes;
 
         public Action OnFinished;
 
         private Camera _startCamera;
         private Camera _cameraReplica;
         private Camera _currentCamera;
+
+        private Cutscene _currentCutscene;
 
         private bool _isPlaying = false;
 
@@ -30,14 +31,24 @@ namespace Cutscene
                 if(Camera.allCameras[i] != _startCamera) Camera.allCameras[i].enabled = false;
             }
 
-            GameObject.Find("InputHandler").GetComponent<InputManager>().Interact += StartCutscene;
+            StartCutscene("Test");
         }
 
-        public void StartCutscene()
+
+        public void StartCutscene(string cutsceneName)
         {
             if(!_isPlaying)
             {
-                Debug.Log("Starting cutscene");
+                for(int i = 0; i < _cutscenes.Count; ++i)
+                {
+                    if (cutsceneName.ToLower() == _cutscenes[i].GetComponent<Cutscene>().GetName().ToLower())
+                    {
+                        _currentCutscene = _cutscenes[i].GetComponent<Cutscene>();
+                        break;
+                    }
+                    else if(i == _cutscenes.Count-1) throw new Exception("Could not find cutscene!");
+                }
+
                 _isPlaying = true;
 
                 _startCamera.enabled = false;
@@ -59,15 +70,17 @@ namespace Cutscene
 
         private async void ExecuteCutscene()
         {
-            for(int i = 0; i < _transitions.Count; ++i)
+            while(!_currentCutscene.IsFinished())
             {
-                Transition transition = _transitions[i].GetComponent<Transition>();
-
+                Transition transition = _currentCutscene.GetNextTransition();
                 transition.Execute(this);
+
                 await Task.Delay(transition.GetDelay());
             }
+
             Debug.Log("Cutscene finished!");
 
+            // Reset everything
             _currentCamera.enabled = false;
             _startCamera.enabled = true;
 
@@ -76,10 +89,8 @@ namespace Cutscene
 
             Destroy(GameObject.Find("CameraReplica").gameObject);
 
-            for (int i = 0; i < _transitions.Count; ++i)
-            {
-                _transitions[i].GetComponent<Transition>().Reset();
-            }
+            _currentCutscene.Reset();
+            _currentCutscene = null;
 
             _isPlaying = false;
 

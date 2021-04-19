@@ -1,25 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Cutscene
 {
     public class Cutscene : MonoBehaviour
     {
-
-        [SerializeField] private List<Transition> _transitions = new List<Transition>();
         [SerializeField] private string _cutsceneName;
+        [SerializeField] private List<GameObject> _transitions = new List<GameObject>();
+        
         private int _index = 0;
+
 
         private void Awake()
         {
-            if(_cutsceneName.lenght = 0)
+            if(_cutsceneName.Length == 0)
             {
                 _cutsceneName = gameObject.name;
             }
         }
 
-        public List<Transition> GetTransitions()
+        public List<GameObject> GetTransitions()
         {
             return _transitions;
         }
@@ -31,14 +33,15 @@ namespace Cutscene
 
         public Transition GetNextTransition()
         {
-            Transition trans = _transitions[_index];
+            if (IsFinished()) throw new Exception("Requested transition is out of index!");
+            Transition trans = _transitions[_index].GetComponent<Transition>();
             _index++;
             return trans;
         }
 
         public bool IsFinished()
         {
-           if(_index > _transitions) 
+           if(_index >= _transitions.Count) 
            {
               return true;
            }
@@ -49,6 +52,10 @@ namespace Cutscene
         public void Reset()
         {
             _index = 0;
+            for(int i = 0; i < _transitions.Count; ++i)
+            {
+                _transitions[i].GetComponent<Transition>().Reset();
+            }
         }
     }
 }
