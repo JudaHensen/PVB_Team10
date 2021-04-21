@@ -21,7 +21,13 @@ namespace QuickTimeEvent
         private void Start()
         {
             // add event listener for enum change
+            GameObject.Find("InputHandler").GetComponent<InputManager>().Interact += Test;
+        }
 
+        // !! to be removed when enum exists.
+        private void Test()
+        {
+            CreateQuickTimeDisplay("d");
         }
 
         // Replace string with matching enum
@@ -38,6 +44,9 @@ namespace QuickTimeEvent
 
             // instantiate
             GameObject quickTime = Instantiate(_quickTimePrefab);
+
+            // activate scaling
+            quickTime.GetComponent<QuickTimeDisplay>().SetActive(_lifespan);
 
             // set position
 
