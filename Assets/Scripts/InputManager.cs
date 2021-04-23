@@ -52,10 +52,12 @@ public class InputManager : MonoBehaviour
             case InputMode.GAMEPLAY:
                 controls.Gameplay.Enable();
                 controls.QuickTime.Disable();
+                Debug.Log("Set to GP");
                 break;
             case InputMode.QUICK_TIME:
                 controls.Gameplay.Disable();
                 controls.QuickTime.Enable();
+                Debug.Log("Set to QTE");
                 break;
         }
     }
