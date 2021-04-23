@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DroneMovement : MonoBehaviour
 {
-    private float SteerPower = 100;
+    private float SteerPower = 10f;
     private float Power = 1000f;
+    private float rotationX = 0f;
+    private float sensitivityY = 0f;
 
     public Transform Motor;
 
@@ -29,6 +31,8 @@ public class DroneMovement : MonoBehaviour
         Vector2 diry = new Vector2(0f, _input.StickLeft.y);
         _movex = dirx;
         _movey = diry;
+        rotationX += _input.StickLeft.y;
+        rotationX = Mathf.Clamp(rotationX, -30, 30);
 
 
 
@@ -38,8 +42,11 @@ public class DroneMovement : MonoBehaviour
         //Back Movement
         DroneRb.AddForce(transform.forward * -_input.TriggerLeft * Power * Time.fixedDeltaTime);
         // Steering left right
-        DroneRb.AddForceAtPosition(-_movex.x * transform.right * SteerPower * Time.fixedDeltaTime, Motor.position);
+        DroneRb.transform.Rotate(Vector3.up * _input.StickLeft.x * SteerPower * Time.deltaTime);
         //Steering up down
-        DroneRb.AddForceAtPosition(-_movey.y * transform.up * SteerPower * Time.fixedDeltaTime, Motor.position);
+        DroneRb.transform.Rotate(Vector3.right * -_input.StickLeft.y * SteerPower * Time.deltaTime);
+
+        transform.localRotation = Quaternion.Euler(-rotationX, 0f, 0f);
+
     }
 }
