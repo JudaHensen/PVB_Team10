@@ -1,0 +1,1 @@
+﻿public enum QuickTimeInputKey { NORTH, EAST, SOUTH, WEST }

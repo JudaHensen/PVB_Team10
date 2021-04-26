@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public enum QuickTimeInputKey { NORTH, EAST, SOUTH, WEST }
 
     public PlayerControls controls;
 
