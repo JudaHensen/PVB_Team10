@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art/Shaders/Water/Luke.meta
 guid: 38795f1463659fd4ebb0f5aa33b4d72a
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 2715b101f8892934f8cd873b068d3890
+PrefabImporter:
+>>>>>>> art:Assets/Art/Prefab/Mesh_Minehunter_Ship Variant.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
