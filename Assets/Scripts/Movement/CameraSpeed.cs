@@ -8,12 +8,11 @@ public class CameraSpeed : MonoBehaviour
     private InputManager _input;
     public Transform start;
     public Transform end;
-    private Camera camera;
     private float speed = 1;
     void Start()
     {
         _input = FindObjectOfType<InputManager>();
-        camera = FindObjectOfType<Camera>();
+        
         
     }
 
