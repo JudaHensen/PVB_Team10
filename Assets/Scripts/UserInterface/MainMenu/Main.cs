@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CustomUtilities;
 using UnityEngine.SceneManagement;
+using Controls;
 
 namespace MainMenu
 {

@@ -8,7 +8,6 @@ namespace QuickTimeEvent
     public class QuickTimeEventUI : MonoBehaviour
     {
         [SerializeField] private GameObject _quickTimePrefab;
-        [SerializeField] private float _lifespan;
         [SerializeField] private float _spawnDistance = 200;
 
         [SerializeField] private float _diameter = 1000;
@@ -18,21 +17,10 @@ namespace QuickTimeEvent
         private List<float> _previousRotations = new List<float>();
 
 
-        private void Start()
-        {
-            // add event listener for enum change
-            GameObject.Find("InputHandler").GetComponent<InputManager>().Interact += Test;
-        }
-
-        // !! to be removed when enum exists.
-        private void Test()
-        {
-            CreateQuickTimeDisplay("d");
-        }
-
         // Replace string with matching enum
-        private void CreateQuickTimeDisplay(string type)
+        public void CreateQuickTimeDisplay(QuickTimeInputKey type, float lifeSpan)
         {
+            Debug.Log($"Spawned {type}");
             // find new position
             Vector2 pos = FindNewPosition();
 
@@ -46,16 +34,37 @@ namespace QuickTimeEvent
             GameObject quickTime = Instantiate(_quickTimePrefab);
 
             // activate scaling
-            quickTime.GetComponent<QuickTimeDisplay>().SetActive(_lifespan);
+            quickTime.GetComponent<QuickTimeDisplay>().SetActive(lifeSpan);
 
             // set position
 
             RectTransform rect = quickTime.GetComponent<RectTransform>();
-            rect.parent = transform;
+            rect.SetParent(transform);
             rect.localPosition = pos;
 
+            string txt;
+
             // set text
-            rect.Find("Text").GetComponent<Text>().text = type; //<<< enum to text
+            switch (type)
+            {
+                case QuickTimeInputKey.NORTH:
+                    txt = "N";
+                    break;
+                case QuickTimeInputKey.EAST:
+                    txt = "E";
+                    break;
+                case QuickTimeInputKey.SOUTH:
+                    txt = "S";
+                    break;
+                case QuickTimeInputKey.WEST:
+                    txt = "W";
+                    break;
+                default:
+                    txt = "404 LOLZ";
+                    break;
+            }
+
+            rect.Find("Text").GetComponent<Text>().text = txt;
 
         }
 

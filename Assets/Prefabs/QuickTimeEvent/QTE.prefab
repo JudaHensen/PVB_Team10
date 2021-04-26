@@ -306,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315481976348221472}
   - component: {fileID: 8384202142187996715}
+  - component: {fileID: 7487986905826696431}
   m_Layer: 5
   m_Name: QTE
   m_TagString: Untagged
@@ -348,7 +349,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43714e9af95135c43bf045446d0e080d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconNorth: {fileID: 4927301742518628471}
-  iconEast: {fileID: 6981091682403239784}
-  iconSouth: {fileID: 135272918755860921}
-  iconWest: {fileID: 3187492036699097922}
+--- !u!114 &7487986905826696431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591282019996122444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7274527ae4fb9a4aa3ae37afe6c07cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endScale: 0

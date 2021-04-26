@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Controls;
+using System;
 
 namespace QuickTimeEvent
 {
@@ -12,11 +15,32 @@ namespace QuickTimeEvent
         private CustomUtilities.Timer _timer;
         private RectTransform _rect;
         private float _originalScale;
+        private QuickTimeEventManager _quickTime;
+        private Image _img;
+        private InputManager _input;
 
         private void Awake()
         {
+            _input = FindObjectOfType<InputManager>();
             _rect = GetComponent<RectTransform>();
             _originalScale = _rect.localScale.x;
+            _quickTime = FindObjectOfType<QuickTimeEventManager>();
+            _img = GetComponent<Image>();
+            _input.QuickTimeInput += Interact;
+        }
+
+        private void Interact(QuickTimeInputKey obj)
+        {
+            _input.QuickTimeInput -= Interact;
+
+            if (_quickTime.CheckInteraction(obj))
+            {
+                _img.color = Color.green;
+            }
+            else
+            {
+                _img.color = Color.red;
+            }
         }
 
         private void Update()

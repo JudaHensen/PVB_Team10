@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Controls;
 
 public class ZeemijnDetectie : MonoBehaviour
 {
@@ -29,16 +30,13 @@ public class ZeemijnDetectie : MonoBehaviour
         {
             detectedMine = false;
         }
-        Debug.Log(_input.TriggerLeft);
     }
 
     void StartQuickTimeEvent()
     {
-        Debug.Log("Test");
         if (detectedMine)
         {
-            Debug.Log("Good Test");
-            _input.SetInputMode(InputMode.QUICK_TIME);
+            _input.SetInputMode(ControllerInputMode.QUICK_TIME);
         }
     }
 }

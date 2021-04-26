@@ -1,96 +1,126 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controls;
+using System.Threading.Tasks;
 
-public class quickTimeEventManager : MonoBehaviour
+namespace QuickTimeEvent
 {
-
-    public GameObject iconNorth;
-    public GameObject iconEast;
-    public GameObject iconSouth;
-    public GameObject iconWest;
-
-    private bool _isUIActive = false;
-    private QuickTimeInputKey _activeInput;
-    private int _numOfMistakes = 0;
-    private int _maxNumOfMistakes = 2;
-
-    private float _timeToHit = 1.5f;
-    private float _passedTime = 0f;
-
-    private InputManager _input;
-
-    void Start()
+    public class QuickTimeEventManager : MonoBehaviour
     {
-        _input = FindObjectOfType<InputManager>();
-        _input.SetInputMode(InputMode.QUICK_TIME);
-        _input.QuickTimeInput += DisableEventUI;
-    }
 
-    private void Update()
-    {
-        if (_isUIActive)
+        private QuickTimeInputKey _activeInput;
+        private int _numOfMistakes = 0;
+        private int _maxNumOfMistakes = 2;
+
+        private float _lifeSpan = 1.5f;
+        private int _numOfEvents = 5;
+
+        private InputManager _input;
+        private QuickTimeEventUI _ui;
+
+        private QuickTimeInputKey _currentType;
+        private bool _interactionCorrect = false;
+
+        void Start()
         {
-            _passedTime += Time.deltaTime;
-            if(_passedTime >= _timeToHit)
+            _ui = FindObjectOfType<QuickTimeEventUI>();
+
+            _input = FindObjectOfType<InputManager>();
+            _input.InputMode += StartEvent;
+            _input.SetInputMode(ControllerInputMode.QUICK_TIME);
+        }
+
+        private async void StartEvent(ControllerInputMode mode)
+        {
+            if (mode != ControllerInputMode.QUICK_TIME)
             {
-                Debug.Log("LATE!!!!");  
+                Debug.Log("Mode is wrong!");
+                return;
+            }
+
+            // Small delay before first ui element spawns
+            await Task.Delay(250);
+
+            for (int i = 0; i <= _numOfEvents; ++i)
+            {
+                // spawn UI
+                _currentType = RndKey();
+                _ui.CreateQuickTimeDisplay(_currentType, _lifeSpan);
+
+                // delay until ui element is destroyed
+                await Task.Delay((int)Mathf.Floor(_lifeSpan * 1000 + 75));
+
+                // check if player interacted
+                if (!_interactionCorrect)
+                {
+                    _numOfMistakes++;
+                    --i;
+                    _interactionCorrect = false;
+                }
+
+                if (_numOfMistakes >= _maxNumOfMistakes)
+                {
+                    break;
+                }
+
+                // delay until next spawn
+                int delay = Mathf.Abs(new System.Random().Next(1000, 5000));
+                await Task.Delay(delay);
+            }
+
+            // Check Win / Lose
+            if (_numOfMistakes >= _maxNumOfMistakes)
+            {
+                Debug.Log("YU FUKT UP S0N!!");
+                // Do stuff / G A M E   O V E R
+
+            }
+            else
+            {
+                Debug.Log("VICTORYYYY SCREEEEECCCHH!!!!!!!!!!!!!");
+                _input.SetInputMode(ControllerInputMode.GAMEPLAY);
             }
         }
-    }
-    void DisableEventUI(QuickTimeInputKey input)
-    {
-        Debug.Log(input);
-        switch (input)
+
+        public bool CheckInteraction(QuickTimeInputKey type)
         {
-            case QuickTimeInputKey.NORTH:
-                iconNorth.SetActive(true);
-                break;
-            case QuickTimeInputKey.EAST:
-                iconEast.SetActive(true);
-                break;
-            case QuickTimeInputKey.SOUTH:
-                iconSouth.SetActive(true);
-                break;
-            case QuickTimeInputKey.WEST:
-                iconWest.SetActive(true);
-                break;
-            default:
-                Debug.LogWarning("Incorrect value given!");
-                break;
+            Debug.Log($"Pressed: {type}");
+            if (type == _currentType)
+            {
+                _interactionCorrect = true;
+                return true;
+            }
+            return false;
         }
-    }
 
-
-
-    void EnableEventUI(QuickTimeInputKey input)
-    {
-        Debug.Log(input);
-
-        iconNorth.SetActive(false);
-        iconEast.SetActive(false);
-        iconSouth.SetActive(false);
-        iconWest.SetActive(false);
-
-
-
-        switch (input)
+        private QuickTimeInputKey RndKey()
         {
-            case QuickTimeInputKey.NORTH:
-                iconNorth.SetActive(true);
-                break;
-            case QuickTimeInputKey.EAST:
-                iconEast.SetActive(true);
-                break;
-            case QuickTimeInputKey.SOUTH:
-                iconSouth.SetActive(true);
-                break;
-            case QuickTimeInputKey.WEST:
-                iconWest.SetActive(true);
-                break;
-            default:
-                Debug.LogWarning("Incorrect value given!");
-                break;
+            QuickTimeInputKey key;
+
+            int index = Random.Range(0, 4);
+
+            switch (index)
+            {
+                case 0:
+                    key = QuickTimeInputKey.NORTH;
+                    break;
+                case 1:
+                    key = QuickTimeInputKey.EAST;
+                    break;
+                case 2:
+                    key = QuickTimeInputKey.SOUTH;
+                    break;
+                case 3:
+                    key = QuickTimeInputKey.WEST;
+                    break;
+                default:
+                    key = QuickTimeInputKey.NORTH;
+                    Debug.LogError($"Wrong value wag given by randomizor: {index}");
+                    break;
+            }
+            
+            return key;
         }
     }
 }
