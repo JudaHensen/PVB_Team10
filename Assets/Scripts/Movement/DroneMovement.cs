@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controls;
 
 public class DroneMovement : MonoBehaviour
 {
     private float SteerPower = 10f;
-    private float Power = 1000f;
+    private float Power = 100f;
     private float rotationX = 0f;
     private float rotationY = 0f;
 

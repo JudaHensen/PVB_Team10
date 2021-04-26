@@ -222,6 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa3cad85d8362c4c9d01b1f088b1db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StickLeft: {x: 0, y: 0}
+  StickRight: {x: 0, y: 0}
+  TriggerLeft: 0
+  TriggerRight: 0
 --- !u!4 &99513066
 Transform:
   m_ObjectHideFlags: 0
@@ -835,7 +839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: efc9e18ca94f1c647b912da4ecdf5972, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 070a833285e59004681b834db58ce770, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1376,7 +1380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 488e47c20c641c8428d3a7adec4b9496, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4299dea1180ba3c48aa5ec1d639ac914, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2392,7 +2396,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c48574c7e90c23e438fd5715212558e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc5472a00f421c74b9f2dbe548b41135, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2759,7 +2763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minimumInput: 0.6
   _directionalRange: 0.3
-  _interactDelay: 0.17
+  _interactDelay: 0.3
   _menuScroll: {fileID: 1011659780}
 --- !u!1 &1382642538
 GameObject:
@@ -2906,7 +2910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a037232f7e910564389dacfa67aeda30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08d0a07c41cb7b74a802f7e5e158b512, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2980,7 +2984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 83818473d2ef65c4f878111f6177a79e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 583c2e87b0a0b584b96b2020619f792a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3301,7 +3305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb07c6586e1200e42adf46fb4e466ef1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2153d4c3b6435ff4d83bbf0397caa5fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3391,7 +3395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 88cedae3f8edef448b277a42937cb2be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 548db5fb3e9b7e74288d08b7706d940a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3421,7 +3425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b6d5d192e95c146bd399c5bd269706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interaction: LoadScene:Edward&TImer
+  _interaction: LoadScene:BovenWater
   _highlightColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1843316486
 GameObject:

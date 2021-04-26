@@ -7,7 +7,7 @@ using Controls;
 public class ZeemijnDetectie : MonoBehaviour
 {
     private InputManager _input;
-    private float _range = 5f;
+    private float _range = 5000f;
     public Action PlantExplosive;
     private bool detectedMine = false;
 
@@ -28,6 +28,7 @@ public class ZeemijnDetectie : MonoBehaviour
         }
         else
         {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _range, Color.red);
             detectedMine = false;
         }
     }
