@@ -31,7 +31,6 @@ namespace MainMenu
         {
             _input = GameObject.Find("InputHandler").GetComponent<InputManager>();
 
-            _input.Move += JoyconInteract;
             _input.Interact += Interact;
 
             // Find all menu's
@@ -53,11 +52,15 @@ namespace MainMenu
         {
             // Update interaction delay timer
             _delay.Update();
+
+            JoyconInteract();
         }
 
 
-        private void JoyconInteract(Vector2 state)
+        private void JoyconInteract()
         {
+            Vector2 state = _input.StickLeft;
+            // Fix left / right for better sliders.
             if (state.y >= _minimumInput  && Mathf.Abs(state.x) < _directionalRange && _delay.Completed()) Up(state);
             if (state.y <= -_minimumInput && Mathf.Abs(state.x) < _directionalRange && _delay.Completed()) Down(state);
             if (state.x <= -_minimumInput && Mathf.Abs(state.y) < _directionalRange && _delay.Completed()) Left(state);
