@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 
 namespace Controls
 {
@@ -21,6 +22,7 @@ namespace Controls
         public Action<QuickTimeInputKey> QuickTimeInput;
 
         public Action<ControllerInputMode> InputMode;
+        public Action<ControllerType> UsedController;
         void Awake()
         {
             controls = new PlayerControls();
@@ -35,7 +37,9 @@ namespace Controls
             controls.Gameplay.TriggerRight.canceled += ctx => TriggerRight = 0f;
 
             controls.Gameplay.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
+            controls.Gameplay.StickLeft.canceled += ctx => StickLeft = new Vector2();
             controls.Gameplay.StickRight.performed += ctx => StickRight = ctx.ReadValue<Vector2>();
+            controls.Gameplay.StickRight.canceled += ctx => StickRight = new Vector2();
 
             // QuickTime event inputs
             controls.QuickTime.OpenMenu.performed += ctx => ToggleMenu();
@@ -44,6 +48,18 @@ namespace Controls
             controls.QuickTime.Q2.performed += ctx => QuickTimeInput(QuickTimeInputKey.EAST);
             controls.QuickTime.Q3.performed += ctx => QuickTimeInput(QuickTimeInputKey.SOUTH);
             controls.QuickTime.Q4.performed += ctx => QuickTimeInput(QuickTimeInputKey.WEST);
+
+            // Start check voor controller
+            InvokeRepeating("CheckGamepad", 1f, 1f);
+            DontDestroyOnLoad(gameObject);
+        }
+
+        private void CheckGamepad()
+        {
+            if (Gamepad.current.name.Contains("DualShock4"))
+            {
+                UsedController(ControllerType.PS4);
+            }
         }
 
         // change input mapping depending on gameplay

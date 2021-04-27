@@ -32,9 +32,9 @@ namespace QuickTimeEvent
 
         private async void StartEvent(ControllerInputMode mode)
         {
+            // Check if the controller input is set correct
             if (mode != ControllerInputMode.QUICK_TIME)
             {
-                Debug.Log("Mode is wrong!");
                 return;
             }
 
