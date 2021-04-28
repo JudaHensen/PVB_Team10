@@ -58,7 +58,10 @@ namespace Controls
         {
             if (Gamepad.current.name.Contains("DualShock4"))
             {
-                UsedController(ControllerType.PS4);
+                UsedController?.Invoke(ControllerType.PS4);
+            } else if (Gamepad.current.name.Contains("XInputController"))
+            {
+                UsedController?.Invoke(ControllerType.XBOX);
             }
         }
 
