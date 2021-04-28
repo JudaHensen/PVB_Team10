@@ -24,8 +24,6 @@ public class DroneMovement : MonoBehaviour
         DroneRb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-
     private void FixedUpdate()
     {
         Vector2 dirx = new Vector2(_input.StickLeft.x, 0f);
@@ -47,7 +45,7 @@ public class DroneMovement : MonoBehaviour
         DroneRb.transform.Rotate(Vector3.up * _input.StickLeft.x * SteerPower * Time.deltaTime);
         //Steering up down
         DroneRb.transform.Rotate(Vector3.right * _input.StickLeft.y * SteerPower * Time.deltaTime);
-
+        //caps rotation
         transform.localRotation = Quaternion.Euler(-rotationX, rotationY, 0f);
 
     }
