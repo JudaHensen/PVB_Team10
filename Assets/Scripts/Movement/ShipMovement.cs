@@ -55,7 +55,6 @@ public class ShipMovement : MonoBehaviour
         {
             SteerPower = 1 + (velocity * 5);
         }
-        Debug.Log(velocity);
         
     }
 }
