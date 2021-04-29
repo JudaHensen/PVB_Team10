@@ -17,7 +17,7 @@ public class MineLocation : MonoBehaviour
 
         uniqueID = Guid.NewGuid().ToString();
 
-        GetComponent<MeshRenderer>().enabled = _visible;
+      //  GetComponent<MeshRenderer>().enabled = _visible;
     }
 
     private void Update()

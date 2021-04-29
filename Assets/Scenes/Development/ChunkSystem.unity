@@ -121,25 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &45385001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 444995593203141605, guid: 938ffaddd4ca5f04faa25ee316dbe0e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1112419762}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &45385003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45385001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b820df190c924f446a83ab80b4ed5acc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: 0}
 --- !u!4 &52165063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4893771996999769494, guid: 2c8002639f264da428bc89f2e426bde6,
@@ -2036,7 +2017,7 @@ PrefabInstance:
     - target: {fileID: 991689261217067384, guid: dd37bf66f857c574f82a7a338b99f493,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 991689261217067384, guid: dd37bf66f857c574f82a7a338b99f493,
         type: 3}
@@ -2442,6 +2423,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 610543579490894954, guid: 938ffaddd4ca5f04faa25ee316dbe0e6,
+        type: 3}
+      propertyPath: interactText
+      value: 
+      objectReference: {fileID: 474192518}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 938ffaddd4ca5f04faa25ee316dbe0e6, type: 3}
 --- !u!1 &1230161912
@@ -3292,6 +3278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine
       objectReference: {fileID: 0}
+    - target: {fileID: 444995592662924779, guid: 938ffaddd4ca5f04faa25ee316dbe0e6,
+        type: 3}
+      propertyPath: _visible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 444995592662924788, guid: 938ffaddd4ca5f04faa25ee316dbe0e6,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3370,7 +3361,7 @@ PrefabInstance:
     - target: {fileID: 610543579490894954, guid: 938ffaddd4ca5f04faa25ee316dbe0e6,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 610543579490894954, guid: 938ffaddd4ca5f04faa25ee316dbe0e6,
         type: 3}
