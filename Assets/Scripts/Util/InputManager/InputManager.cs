@@ -23,6 +23,7 @@ namespace Controls
 
         public Action<ControllerInputMode> InputMode;
         public Action<ControllerType> UsedController;
+        public ControllerType controllerUsed;
         void Awake()
         {
             controls = new PlayerControls();
@@ -50,18 +51,26 @@ namespace Controls
             controls.QuickTime.Q4.performed += ctx => QuickTimeInput(QuickTimeInputKey.WEST);
 
             // Start check voor controller
+            CheckGamepad();
             InvokeRepeating("CheckGamepad", 1f, 1f);
             DontDestroyOnLoad(gameObject);
         }
 
         private void CheckGamepad()
         {
+
+            UsedController?.Invoke(ControllerType.XBOX);
+            controllerUsed = ControllerType.XBOX;
+            return;
+            
             if (Gamepad.current.name.Contains("DualShock4"))
             {
                 UsedController?.Invoke(ControllerType.PS4);
+                controllerUsed = ControllerType.PS4;
             } else if (Gamepad.current.name.Contains("XInputController"))
             {
                 UsedController?.Invoke(ControllerType.XBOX);
+                controllerUsed = ControllerType.XBOX;
             }
         }
 
@@ -84,6 +93,11 @@ namespace Controls
 
             InputMode?.Invoke(mode);
 
+        }
+
+        public ControllerType GetControllerType()
+        {
+            return controllerUsed;
         }
 
         private void OnEnable()
