@@ -28,13 +28,15 @@ namespace QuickTimeEvent
 
             _input = FindObjectOfType<InputManager>();
             _input.InputMode += StartEvent;
+            _input.SetInputMode(ControllerInputMode.QUICK_TIME);
         }
 
         private async void StartEvent(ControllerInputMode mode)
         {
+            Debug.Log("Starting QTE");
+            // Check if the controller input is set correct
             if (mode != ControllerInputMode.QUICK_TIME)
             {
-                Debug.Log("Mode is wrong!");
                 return;
             }
 
