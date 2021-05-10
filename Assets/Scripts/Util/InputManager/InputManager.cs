@@ -45,10 +45,10 @@ namespace Controls
             // QuickTime event inputs
             controls.QuickTime.OpenMenu.performed += ctx => ToggleMenu();
 
-            controls.QuickTime.Q1.performed += ctx => QuickTimeInput(QuickTimeInputKey.NORTH);
-            controls.QuickTime.Q2.performed += ctx => QuickTimeInput(QuickTimeInputKey.EAST);
-            controls.QuickTime.Q3.performed += ctx => QuickTimeInput(QuickTimeInputKey.SOUTH);
-            controls.QuickTime.Q4.performed += ctx => QuickTimeInput(QuickTimeInputKey.WEST);
+            controls.QuickTime.Q1.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.NORTH);
+            controls.QuickTime.Q2.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.EAST);
+            controls.QuickTime.Q3.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.SOUTH);
+            controls.QuickTime.Q4.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.WEST);
 
             // Start check voor controller
             CheckGamepad();
@@ -57,12 +57,7 @@ namespace Controls
         }
 
         private void CheckGamepad()
-        {
-
-            UsedController?.Invoke(ControllerType.XBOX);
-            controllerUsed = ControllerType.XBOX;
-            return;
-            
+        {   
             if (Gamepad.current.name.Contains("DualShock4"))
             {
                 UsedController?.Invoke(ControllerType.PS4);

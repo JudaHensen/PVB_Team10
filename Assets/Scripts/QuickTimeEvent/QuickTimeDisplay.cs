@@ -34,7 +34,7 @@ namespace QuickTimeEvent
 
         private void Interact(QuickTimeInputKey obj)
         {
-            _input.QuickTimeInput -= Interact;
+            _input.QuickTimeInput -= this.Interact;
 
             if (_quickTime.CheckInteraction(obj))
             {

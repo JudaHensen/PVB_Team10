@@ -62,29 +62,7 @@ namespace QuickTimeEvent
             rect.SetParent(transform);
             rect.localPosition = pos;
 
-            string txt;
             Sprite img = SetSprite(type);
-            // set text
-            switch (type)
-            {
-                case QuickTimeInputKey.NORTH:
-                    txt = "N";
-                    break;
-                case QuickTimeInputKey.EAST:
-                    txt = "E";
-                    break;
-                case QuickTimeInputKey.SOUTH:
-                    txt = "S";
-                    break;
-                case QuickTimeInputKey.WEST:
-                    txt = "W";
-                    break;
-                default:
-                    txt = "404 LOLZ";
-                    break;
-            }
-
-            rect.Find("Text").GetComponent<Text>().text = txt;
             rect.GetComponent<Image>().sprite = img;
 
         }
