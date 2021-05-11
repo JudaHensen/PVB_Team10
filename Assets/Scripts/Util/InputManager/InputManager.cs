@@ -23,7 +23,7 @@ namespace Controls
 
         public Action<ControllerInputMode> InputMode;
         public Action<ControllerType> UsedController;
-        public ControllerType controllerUsed;
+        private ControllerType controllerUsed;
         void Awake()
         {
             controls = new PlayerControls();
@@ -66,6 +66,10 @@ namespace Controls
             {
                 UsedController?.Invoke(ControllerType.XBOX);
                 controllerUsed = ControllerType.XBOX;
+            }
+            else
+            {
+                Debug.LogWarning("NO CONTROLLER FOUND!");
             }
         }
 
