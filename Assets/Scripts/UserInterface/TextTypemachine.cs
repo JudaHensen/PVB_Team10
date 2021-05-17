@@ -22,6 +22,7 @@ namespace UserInterface
 
         public void TypeMessage(string message, float typeSpeed)
         {
+            Clear();
             _typeSpeed = typeSpeed;
             _message = message.ToCharArray();
 

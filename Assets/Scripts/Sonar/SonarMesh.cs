@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class SonarMesh : MonoBehaviour
+public class SonarMesh
 {
     // Creates sonar mesh
     public SonarMesh(float width, float height, float depth, Transform transform)
