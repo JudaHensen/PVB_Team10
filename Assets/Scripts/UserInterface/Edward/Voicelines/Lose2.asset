@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81c39f9025de618478d2ebdcea7eee93, type: 3}
-  m_Name: Test
+  m_Name: Lose2
   m_EditorClassIdentifier: 
-  previewName: Subtitle test
-  message: Subtitle bwoi get rekt m8 360 no scoped
+  previewName: Lose2
+  message: Je heb een zeemijn geraakt! VERLAAT HET SCHIP!
   displayTime: 10
   typeSpeed: 0.04
-  id: 90
+  id: 3

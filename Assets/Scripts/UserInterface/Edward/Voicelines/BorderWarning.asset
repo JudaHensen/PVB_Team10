@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewName: Border Warning
   message: Je begaat nu onbekende wateren! keer terug voordat je in een zeemijn vaart!
-  voiceMessage: {fileID: 0}
   displayTime: 10
   typeSpeed: 0.04
-  parameterName: 
-  parameterValue: 
+  id: 9

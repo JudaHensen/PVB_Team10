@@ -30,13 +30,11 @@ namespace World
             if (_range >= warnRange && _range < killRange && !_isWarning)
             {
                 _isWarning = true;
-                GameEvent dia = new GameEvent(GameEventType.DIALOGUE, 0);
+                GameEvent dia = new GameEvent(GameEventType.DIALOGUE, 9);
                 _evtManager.RunEvent(dia);
-                Debug.Log("WARN!!!!!");
             }else if (_range > killRange)
             {
                 Debug.Log("KILL!!!!!");
-//                Kill?.Invoke("Je boot in geraakt door een zeemijn in onbekende wateren. \nNiemand heeft de explosie overleefd.");
             }
             else if(_range <= warnRange)
             {

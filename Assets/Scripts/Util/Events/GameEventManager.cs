@@ -12,23 +12,20 @@ namespace GameEventManagment
         private GameEventGameOver _gameOver;
         private GameEventWin _win;
 
-        [SerializeField]
-        private Edward.Voiceline _warning;
-
         private void Start()
         {
             _dialogue = FindObjectOfType<GameEventDialogue>();
         }
         public void RunEvent(GameEvent evt)
         {
-            Debug.Log($"Recieved: {evt.eventType}, {evt.str}");
+            Debug.Log($"Recieved: {evt.eventType}, {evt.ID}");
 
             switch (evt.eventType)
             {
                 case GameEventType.GAME_OVER:
                     break;
                 case GameEventType.DIALOGUE:
-                    _dialogue.Run(_warning);
+                    _dialogue.Run(evt.ID);
                     break;
                 case GameEventType.LOAD_SCENE:
                     break;

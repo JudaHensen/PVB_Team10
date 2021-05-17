@@ -1,0 +1,27 @@
+0 = invalid
+1 = win
+2-8 = verlies
+9-12 = waarschuwingen
+13-20 = instructies
+90-99 = Debug
+
+1: Win
+Goed gedaan, je hebt de zeemijn ontschadelijk gemaakt!
+
+2: Lose1
+De tijd is op, we keren nu terug zonder ook maar 1 zeemijn te hebben ontmanteld.
+
+3: Lose2
+Je heb een zeemijn geraakt! VERLAAT HET SCHIP!
+
+4: Lose3
+Het ontmantelen van de zeemijn is gefaald en je heb ook nog een drone kompleet verwoest die meer kost dan jij in je leven ooit zal verdienen.
+
+9: Border Warning
+Je begaat nu onbekende wateren! keer terug voordat je in een zeemijn vaart!
+
+10: Mine Warning
+Kijk uit dat je die zeemijn niet raakt!
+
+90: Subtitle test
+Subtitle bwoi get rekt m8 360 no scoped
