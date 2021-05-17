@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ce3cc177259dba84480a900b11593a18
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BovenWater.unity
     guid: 7336645e13e6a2947a58289a44746bac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OnderWater.unity
     guid: a86263897ebd11440a59a28fa8c75415
+  - enabled: 1
+    path: Assets/Scenes/Development/SceneSwitching/SceneSwitching.unity
+    guid: 9844c4af8a3f1f64bbf8df934f2026a1
+  - enabled: 1
+    path: Assets/Scenes/Development/SceneSwitching/SceneSwitchOnder.unity
+    guid: 5f4e9fcbf753b74499395640e43cfe87
   m_configObjects: {}

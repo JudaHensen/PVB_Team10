@@ -2,44 +2,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class InteractionDetect : MonoBehaviour
 {
     private InputManager _input;
-    private bool isinteraction;
-    [SerializeField]
-    private GameObject interactText;
+    private bool _isinteraction;
+    [SerializeField] private GameObject _interactText;
+    
 
     void Start()
     {
         _input = FindObjectOfType<InputManager>();
         _input.Interact += Interaction;
-        interactText.SetActive(false);
+
+        _interactText = GameObject.Find("DiveText");
+        _interactText.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("ship"))
-        {
-            isinteraction = true;
-            interactText.SetActive(true);
-            print("aah");
+        //Debug.Log($"Trigger enter: {col.gameObject.name}");
 
+        if (col.CompareTag("Ship"))
+        {
+            _isinteraction = true;
+            _interactText.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("ship"))
+        if (col.CompareTag("Ship"))
         {
-            isinteraction = false;
-            interactText.SetActive(false);
-        }
-       
+            _isinteraction = false;
+            _interactText.SetActive(false);
+        }  
     }
 
     private void Interaction()
     {
-        SceneManager.LoadScene("OnderWater");
+        Debug.Log("Interact > dive");
+        SceneSwitch sceneSwitch = GameObject.Find("SceneSwitch").GetComponent<SceneSwitch>();
+        sceneSwitch.SwitchScene();
     }
 }

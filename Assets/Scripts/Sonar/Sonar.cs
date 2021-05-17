@@ -57,7 +57,7 @@ public class Sonar : MonoBehaviour
                 _speed * Time.deltaTime, 
                 transform.parent.eulerAngles.y, 
                 new Vector2(transform.parent.position.x, transform.parent.position.z));
-        } catch(Exception e) {
+        } catch {
             // Triggers when no class assigned a function to the event.
         }
     }
