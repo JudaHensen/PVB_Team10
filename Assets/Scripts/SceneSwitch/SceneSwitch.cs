@@ -54,7 +54,7 @@ public class SceneSwitch : MonoBehaviour
         cutsceneHandler.StartCutscene(_cutscene);
 
         // Load scene in background;
-        SceneManager.LoadScene(_sceneToLoad);
+        SceneManager.LoadSceneAsync(_sceneToLoad);
     }
 
     // Activate function to destroy all gameobjects in list, including this gameobject
