@@ -7,9 +7,10 @@ public class ExplodeDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("ship"))
+        if (col.CompareTag("Ship"))
         {
             Destroy(col.gameObject);
+            Debug.Log("Ship exploded!");
         }
     }
 }

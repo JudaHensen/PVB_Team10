@@ -31,7 +31,7 @@ namespace Cutscene
                 if(Camera.allCameras[i] != _startCamera) Camera.allCameras[i].enabled = false;
             }
 
-            StartCutscene("Test");
+            //StartCutscene("Test");
         }
 
 
