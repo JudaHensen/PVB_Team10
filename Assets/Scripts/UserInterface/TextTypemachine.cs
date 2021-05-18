@@ -15,7 +15,7 @@ namespace UserInterface
 
         private bool _isTyping;
 
-        private void Start()
+        private void Awake()
         {
             _text = GetComponent<Text>();
         }
