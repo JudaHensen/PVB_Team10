@@ -33,31 +33,31 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_CF15197A:
-        m_Texture: {fileID: 2800000, guid: 5173c51ea1bb1ef4c8c7c4b9de478c70, type: 3}
+        m_Texture: {fileID: 2800000, guid: a40fe088bc50d8d4fb49163ad3cab025, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1E0ED1B9: -0.28
+    - Vector1_1E0ED1B9: -0.48
     - Vector1_28339793: 0.5
     - Vector1_2854055C: 0.89
-    - Vector1_3B87EF78: 3
-    - Vector1_64696864: 6.53
-    - Vector1_656CB6B9: 0.3
+    - Vector1_3B87EF78: 0.5
+    - Vector1_64696864: 23.7
+    - Vector1_656CB6B9: 0.8
     - Vector1_76DAF233: 1.51
-    - Vector1_7BBF1967: 0.09
-    - Vector1_88CD2492: 0.5
-    - Vector1_91F26A77: 1
-    - Vector1_A9949703: 0.33
-    - Vector1_CBC02DA3: 0.1
-    - Vector1_CC70A5BB: 0.1
-    - Vector1_D42A3A50: 2.18
-    - Vector1_D7658EF4: -0.67
-    - Vector1_F3B2AE68: 2.49
-    - Vector1_FAEA9018: 0.5
+    - Vector1_7BBF1967: 0.59
+    - Vector1_88CD2492: 0.3
+    - Vector1_91F26A77: 13
+    - Vector1_A9949703: 0.71
+    - Vector1_CBC02DA3: 1.4
+    - Vector1_CC70A5BB: 0.3
+    - Vector1_D42A3A50: -3.47
+    - Vector1_D7658EF4: -1.1
+    - Vector1_F3B2AE68: 5
+    - Vector1_FAEA9018: 0.67
     m_Colors:
-    - Color_11400190: {r: 0.33254716, g: 0.4433962, b: 0.4433962, a: 1}
-    - Color_576A0C9D: {r: 0.05918476, g: 0.19936591, b: 0.3584906, a: 1}
-    - Color_63A0B25A: {r: 0, g: 0.38761285, b: 0.5943396, a: 0}
-    - Color_FAEF0D3E: {r: 0.32941177, g: 0.35365692, b: 0.48235294, a: 0}
+    - Color_11400190: {r: 0.22067462, g: 0.25630808, b: 0.2735849, a: 1}
+    - Color_576A0C9D: {r: 0.03604486, g: 0.10133563, b: 0.16981131, a: 1}
+    - Color_63A0B25A: {r: 0.13725488, g: 0.43805325, b: 0.5686275, a: 0}
+    - Color_FAEF0D3E: {r: 0.09131362, g: 0.25385034, b: 0.33962262, a: 1}
     - Vector2_A55539AA: {r: 1.05, g: -0.09, b: 0, a: 0}
-    - Vector2_EDFF784C: {r: 1.74, g: 0.28, b: 0, a: 0}
+    - Vector2_EDFF784C: {r: 5.12, g: 1.51, b: 0, a: 0}
