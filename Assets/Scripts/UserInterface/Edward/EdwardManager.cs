@@ -6,11 +6,10 @@ using System;
 public class EdwardManager : MonoBehaviour
 {
     [SerializeField]
-    private Edward.Voiceline _currentVoiceline;
-    [SerializeField]
     private float _subtitleEndOffset = 1f;
 
     private GameObject _edward;
+    private Edward.Voiceline _currentVoiceline;
     private UserInterface.TextTypemachine _subtitles;
 
     public Action FinishedVoiceline;
@@ -21,8 +20,7 @@ public class EdwardManager : MonoBehaviour
         _edward = transform.Find("Edward").gameObject;
         _subtitles = transform.Find("Subtitles").gameObject.GetComponent<UserInterface.TextTypemachine>();
 
-        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Remove
-        SetVoiceline(_currentVoiceline);
+        _subtitles.Clear();
     }
 
     public void SetVoiceline(Edward.Voiceline voiceline)
@@ -31,9 +29,9 @@ public class EdwardManager : MonoBehaviour
 
         // Update edward
 
-        // Update subtitle <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Only do this set to yes in settings
-        if (voiceline.typeSpeed <= ((voiceline.displayTime - 1) / voiceline.message.Length)) _subtitles.TypeMessage(voiceline.message, voiceline.typeSpeed);
-        else _subtitles.TypeMessage(voiceline.message, (voiceline.displayTime - 1) / voiceline.message.Length);
+
+        if (voiceline.typeSpeed <= ((voiceline.displayTime - _subtitleEndOffset) / voiceline.message.Length)) _subtitles.TypeMessage(voiceline.message, voiceline.typeSpeed);
+        else _subtitles.TypeMessage(voiceline.message, (voiceline.displayTime - _subtitleEndOffset) / voiceline.message.Length);
 
         _timer = new CustomUtilities.Timer(voiceline.displayTime);
         _timer.OnComplete += OnFinished;
