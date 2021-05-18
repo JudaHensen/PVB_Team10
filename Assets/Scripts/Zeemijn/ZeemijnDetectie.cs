@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,30 +7,39 @@ using Controls;
 public class ZeemijnDetectie : MonoBehaviour
 {
     private InputManager _input;
-    private float _range = 5000f;
     public Action PlantExplosive;
     private bool detectedMine = false;
+    
+    public Action<bool> canInteract;
 
     private void Start()
     {
         _input = FindObjectOfType<InputManager>();
         _input.Interact += StartQuickTimeEvent;
     }
-    void FixedUpdate()
-    {
-        RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _range))
+    private void SetDetection(bool state)
+    {
+        canInteract?.Invoke(state);
+        detectedMine = state;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.transform.tag == "Zeemijn")
         {
-            // Draw line in scene view to visualize raycast
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
-            detectedMine = true;
+            SetDetection(true);
+            Debug.Log("Got one");
         }
-        else
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Zeemijn")
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _range, Color.red);
-            detectedMine = false;
+            SetDetection(false);
         }
+        
     }
 
     void StartQuickTimeEvent()
@@ -41,3 +50,22 @@ public class ZeemijnDetectie : MonoBehaviour
         }
     }
 }
+
+
+//private float _range = 5000f;
+
+// Raycast Method
+
+//RaycastHit hit;
+
+//if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _range))
+//{
+//    // Draw line in scene view to visualize raycast
+//    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+//    detectedMine = true;
+//}
+//else
+//{
+//    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _range, Color.red);
+//    detectedMine = false;
+//}
