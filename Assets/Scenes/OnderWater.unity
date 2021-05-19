@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6679,7 +6679,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.9401283, b: 0.7294118, a: 1}
-  m_Intensity: 0.31
+  m_Intensity: 0.15
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8067,7 +8067,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712759999}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -8454,6 +8454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lighting onderwater
       objectReference: {fileID: 0}
+    - target: {fileID: 4998485943472763460, guid: 51f093e399025334a8b2ca9623900a8d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6181488452370737969, guid: 51f093e399025334a8b2ca9623900a8d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8758,6 +8763,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 704259481373814750, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 704259481373814750, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 35.545364
+      objectReference: {fileID: 0}
+    - target: {fileID: 704259481373814750, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Range
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893664276462463066, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893664276462463066, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 33.674973
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893664276462463066, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 61.822666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893664276462463066, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Range
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241811214004687435, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241811214004687435, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 35.95755
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241811214004687435, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 66.55448
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241811214004687435, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Range
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3684512969878685105, guid: 92d4e08749270db40a13919e63dbe1c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8813,10 +8873,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3714575724354418577, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714575724354418577, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 34.92823
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714575724354418577, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 63.39055
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714575724354418577, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_Range
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4065015068176162571, guid: 92d4e08749270db40a13919e63dbe1c1,
         type: 3}
       propertyPath: m_Name
       value: Chonky
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929186116693976618, guid: 92d4e08749270db40a13919e63dbe1c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92d4e08749270db40a13919e63dbe1c1, type: 3}
