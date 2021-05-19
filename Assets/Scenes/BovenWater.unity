@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -435,7 +435,7 @@ MonoBehaviour:
   _height: 25
   _range: 75
   _speed: 36
-  _visible: 1
+  _visible: 0
   _sound: {fileID: 8300000, guid: f04437f932a4e1c4884c5ee33ea7f07a, type: 3}
   _foundDelay: 2
   _destroyRange: 150
