@@ -7,13 +7,13 @@ namespace GameEventManagment
 {
     public class GameEventDialogue : MonoBehaviour
     {
-        private EdwardManager _edManager;
+        private Subtitles.EdwardManager _edManager;
 
         public List<Edward.Voiceline> voiceLines = new List<Edward.Voiceline>();
 
         private void Start()
         {
-            _edManager = FindObjectOfType<EdwardManager>();
+            _edManager = FindObjectOfType<Subtitles.EdwardManager>();
         }
 
         public void Run(int ID)

@@ -8,6 +8,8 @@
 1: Win
 Goed gedaan, je hebt de zeemijn ontschadelijk gemaakt!
 
+~~~~~ Lose ~~~~~
+
 2: Lose1
 De tijd is op, we keren nu terug zonder ook maar 1 zeemijn te hebben ontmanteld.
 
@@ -22,6 +24,37 @@ Je begaat nu onbekende wateren! keer terug voordat je in een zeemijn vaart!
 
 10: Mine Warning
 Kijk uit dat je die zeemijn niet raakt!
+
+~~~~~ Instructions ~~~~~
+
+13: Introductie Edward
+Hallo daar. Ik ben... uhm... Edward...
+Jouw persoonlijke zeer... capabele commandant...
+
+14: Uitleg doel
+Nu dat uit de weg is, laat mij jou persoonlijke missie vertellen.
+Ons schip zit in een gevaarlijke zone met veel zee mijnen.
+Jij gaat deze mijnen ontmantelen.
+
+15: Uitleg Sonar
+Rechts onderin kan je onze S.O.N.A.R. zien, hiermee kan je mijnen ontdekken.
+Als je dicht genoeg bij een mijn bent, dan kan je met je drone duiken.
+Zo gaan jij uiteindelijk de mijn ontmantelen.
+Let op!
+Kom niet te dicht bij een mijn. Anders zijn wij er beiden geweest!
+
+16: Uitleg varen
+Oh ja, verder moet je nog legen varen.
+Met je linker joystick kan je de boot sturen, en met je rechter trigger vaar je vooruit.
+Je kan alleen sturen als wij varen!
+
+17: Border & Succes
+En nog 1 laatste waarschuwing.
+Als je te ver vaart kom je in een te gevaarlijk gebied met veels te veel mijnen.
+Hier zullen wij gegarandeerd sneuvelen.
+
+Succes!
+
 
 90: Subtitle test
 Subtitle bwoi get rekt m8 360 no scoped

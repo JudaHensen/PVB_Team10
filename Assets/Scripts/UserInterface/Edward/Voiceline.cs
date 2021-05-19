@@ -8,7 +8,8 @@ namespace Edward {
     public class Voiceline : ScriptableObject
     {
         public string previewName;
-        public string message;
+        
+        [Multiline] public string message;
 
         public float displayTime;
         [Header("Overwrites if the typeSpeed takes longer than the display time.")]
