@@ -92,6 +92,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2f921838-88dc-44b1-9ad1-791e6525e7b5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7b249560-2e22-46f8-8022-3d31875d6463"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
@@ -238,9 +249,259 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MainMenu"",
+            ""id"": ""fcb9aedd-ad31-493a-9a9f-0357629ba0b2"",
+            ""actions"": [
+                {
+                    ""name"": ""AnyKey"",
+                    ""type"": ""Value"",
+                    ""id"": ""c07c9997-6129-4a93-a242-6bda1ea76d08"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""5ba2d04f-f715-467e-963a-0d0c30e3205c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""StickLeft"",
+                    ""type"": ""Value"",
+                    ""id"": ""4b0fff7f-3a66-4889-980b-a706ce828071"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7abdf91-73c5-48d0-8e32-4d74069b9ecf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""58c71a2d-f328-46d6-81f1-d116f8b22e25"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52c5b5a5-b343-42ee-9c81-67f4baaace47"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a53bc5a2-05e6-4715-a885-f2bca5bf92f6"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74eebc39-1ebd-4b08-820d-e827a602962c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7ad5967-62d7-4a1b-8457-bbe9f87d0a6c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0fd22e5-636e-47a7-9492-418699ee1aa7"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a060ea9-3a80-418a-865f-370430d7235e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c8c95ce-1773-46d0-8980-2e85fa89649e"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24b80b6b-c17f-4ee9-8a8a-91428c5cace1"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38bd0af1-1ae3-470f-88e1-434b475abe2f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d402ded8-6f1b-4674-9d41-b8bf1348553c"",
+                    ""path"": ""<DualShockGamepad>/touchpadButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc8f073e-75e2-4a62-b63a-66019221389e"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88a0d669-40b6-42b5-8218-0738c0487257"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6b021d6-e959-4778-b5bd-8e69d7c252dc"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11bc78a5-f95a-4bd9-8d18-4b78cfcf7d1b"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9d20cb9-f683-4d45-8db2-e47b1fd062e0"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8be91ca-353a-43fd-904a-ec2747778211"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdb889a8-b37c-4976-95e7-02b0c2005ea4"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
@@ -257,6 +518,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_QuickTime_Q3 = m_QuickTime.FindAction("Q3", throwIfNotFound: true);
         m_QuickTime_Q4 = m_QuickTime.FindAction("Q4", throwIfNotFound: true);
         m_QuickTime_OpenMenu = m_QuickTime.FindAction("OpenMenu", throwIfNotFound: true);
+        // MainMenu
+        m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
+        m_MainMenu_AnyKey = m_MainMenu.FindAction("AnyKey", throwIfNotFound: true);
+        m_MainMenu_Interact = m_MainMenu.FindAction("Interact", throwIfNotFound: true);
+        m_MainMenu_StickLeft = m_MainMenu.FindAction("StickLeft", throwIfNotFound: true);
+        m_MainMenu_Back = m_MainMenu.FindAction("Back", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -440,6 +707,72 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public QuickTimeActions @QuickTime => new QuickTimeActions(this);
+
+    // MainMenu
+    private readonly InputActionMap m_MainMenu;
+    private IMainMenuActions m_MainMenuActionsCallbackInterface;
+    private readonly InputAction m_MainMenu_AnyKey;
+    private readonly InputAction m_MainMenu_Interact;
+    private readonly InputAction m_MainMenu_StickLeft;
+    private readonly InputAction m_MainMenu_Back;
+    public struct MainMenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MainMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @AnyKey => m_Wrapper.m_MainMenu_AnyKey;
+        public InputAction @Interact => m_Wrapper.m_MainMenu_Interact;
+        public InputAction @StickLeft => m_Wrapper.m_MainMenu_StickLeft;
+        public InputAction @Back => m_Wrapper.m_MainMenu_Back;
+        public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMainMenuActions instance)
+        {
+            if (m_Wrapper.m_MainMenuActionsCallbackInterface != null)
+            {
+                @AnyKey.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnAnyKey;
+                @AnyKey.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnAnyKey;
+                @AnyKey.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnAnyKey;
+                @Interact.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnInteract;
+                @StickLeft.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnStickLeft;
+                @StickLeft.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnStickLeft;
+                @StickLeft.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnStickLeft;
+                @Back.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBack;
+            }
+            m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @AnyKey.started += instance.OnAnyKey;
+                @AnyKey.performed += instance.OnAnyKey;
+                @AnyKey.canceled += instance.OnAnyKey;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @StickLeft.started += instance.OnStickLeft;
+                @StickLeft.performed += instance.OnStickLeft;
+                @StickLeft.canceled += instance.OnStickLeft;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
+            }
+        }
+    }
+    public MainMenuActions @MainMenu => new MainMenuActions(this);
+    private int m_ControllerSchemeIndex = -1;
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
+        }
+    }
     public interface IGameplayActions
     {
         void OnTriggerLeft(InputAction.CallbackContext context);
@@ -456,5 +789,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnQ3(InputAction.CallbackContext context);
         void OnQ4(InputAction.CallbackContext context);
         void OnOpenMenu(InputAction.CallbackContext context);
+    }
+    public interface IMainMenuActions
+    {
+        void OnAnyKey(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnStickLeft(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }

@@ -19,6 +19,10 @@ namespace Controls
         public Action ToggleMenu;
         public Action Interact;
 
+        // Main Menu
+        public Action AnyKey;
+        public Action Back;
+
         public Action<QuickTimeInputKey> QuickTimeInput;
 
         public Action<ControllerInputMode> InputMode;
@@ -50,6 +54,14 @@ namespace Controls
             controls.QuickTime.Q3.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.SOUTH);
             controls.QuickTime.Q4.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.WEST);
 
+            // MainMenu Inputs
+            controls.MainMenu.AnyKey.performed += ctx => AnyKey?.Invoke();
+            controls.MainMenu.Interact.performed += ctx => Interact?.Invoke();
+            controls.MainMenu.Back.performed += ctx => Back?.Invoke();
+
+            controls.MainMenu.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
+            controls.MainMenu.StickLeft.canceled += ctx => StickLeft = new Vector2();
+
             // Start check voor controller
             CheckGamepad();
             InvokeRepeating("CheckGamepad", 1f, 1f);
@@ -57,36 +69,47 @@ namespace Controls
         }
 
         private void CheckGamepad()
-        {   
+        {
+            try
+            {
+                Debug.Log(Gamepad.current.name);
+            }
+            catch
+            {
+                Debug.LogWarning("NO CONTROLLER FOUND! Error");
+                throw;
+            }
+
             if (Gamepad.current.name.Contains("DualShock4"))
             {
                 UsedController?.Invoke(ControllerType.PS4);
                 controllerUsed = ControllerType.PS4;
-            } else if (Gamepad.current.name.Contains("XInputController"))
+            }
+            else if (Gamepad.current.name.Contains("XInputController"))
             {
                 UsedController?.Invoke(ControllerType.XBOX);
                 controllerUsed = ControllerType.XBOX;
-            }
-            else
-            {
-                Debug.LogWarning("NO CONTROLLER FOUND!");
             }
         }
 
         // change input mapping depending on gameplay
         public void SetInputMode(ControllerInputMode mode)
         {
+            controls.Gameplay.Disable();
+            controls.QuickTime.Disable();
+            controls.MainMenu.Disable();
             switch (mode)
             {
                 case ControllerInputMode.GAMEPLAY:
                     controls.Gameplay.Enable();
-                    controls.QuickTime.Disable();
                     Debug.Log("Set to GP");
                     break;
                 case ControllerInputMode.QUICK_TIME:
-                    controls.Gameplay.Disable();
                     controls.QuickTime.Enable();
                     Debug.Log("Set to QTE");
+                    break;
+                case ControllerInputMode.MAIN_MENU:
+                    controls.MainMenu.Enable();
                     break;
             }
 
@@ -101,13 +124,14 @@ namespace Controls
 
         private void OnEnable()
         {
-            controls.Gameplay.Enable();
+            controls.MainMenu.Enable();
         }
 
         private void OnDisable()
         {
             controls.Gameplay.Disable();
             controls.QuickTime.Disable();
+            controls.MainMenu.Disable();
         }
     }
 }
