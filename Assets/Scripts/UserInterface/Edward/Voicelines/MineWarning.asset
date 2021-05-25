@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MineWarning
   m_EditorClassIdentifier: 
   previewName: Mine Warning
-  message: Kijk uit dat je die zeemijn niet raakt!
+  message: Kijk uit dat je die zeemijn niet raakt houd genoeg afstand!
   displayTime: 10
   typeSpeed: 0.04
   id: 10
