@@ -76,7 +76,7 @@ namespace MainMenu
                 case "Main":
                     menu = "Start";
                     break;
-                case "Settings":
+                case "Credits":
                     menu = "Main";
                     break;
                 default:
