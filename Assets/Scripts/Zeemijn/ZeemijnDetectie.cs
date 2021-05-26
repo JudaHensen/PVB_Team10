@@ -29,7 +29,6 @@ public class ZeemijnDetectie : MonoBehaviour
         if(other.transform.tag == "Zeemijn")
         {
             SetDetection(true);
-            Debug.Log("Got one");
         }
     }
 

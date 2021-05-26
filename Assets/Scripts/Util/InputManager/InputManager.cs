@@ -77,7 +77,7 @@ namespace Controls
             catch
             {
                 Debug.LogWarning("NO CONTROLLER FOUND! Error");
-                throw;
+                return;
             }
 
             if (Gamepad.current.name.Contains("DualShock4"))
@@ -124,7 +124,7 @@ namespace Controls
 
         private void OnEnable()
         {
-            controls.MainMenu.Enable();
+            controls.Gameplay.Enable();
         }
 
         private void OnDisable()

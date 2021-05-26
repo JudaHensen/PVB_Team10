@@ -79,17 +79,6 @@
                 },
                 {
                     "name": "",
-                    "id": "2f921838-88dc-44b1-9ad1-791e6525e7b5",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "7b249560-2e22-46f8-8022-3d31875d6463",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
