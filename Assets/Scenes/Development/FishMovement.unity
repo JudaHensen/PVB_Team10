@@ -303,6 +303,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1489239946265652278, guid: 35435f5d38c0dd046abb94e2bf674e4d,
+        type: 3}
+      propertyPath: _minAnimationSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489239946265652278, guid: 35435f5d38c0dd046abb94e2bf674e4d,
+        type: 3}
+      propertyPath: _maxAnimationSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1489239946304226720, guid: 35435f5d38c0dd046abb94e2bf674e4d,
         type: 3}
       propertyPath: m_Name

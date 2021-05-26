@@ -14,10 +14,11 @@ namespace FishMovement
         [Header("Makes the fished move a bit smoother, but they take in a lot more space. Might not be usefull for swimming through narrow paths.")]
         [SerializeField] private bool _smoothest = false;
 
+        [SerializeField] private float _minAnimationSpeed = 2;
+        [SerializeField] private float _maxAnimationSpeed = 5;
+
         private GameObject _lookAt;
         private List<GameObject> _wayPoints;
-
-        
 
         private Transform _currentWayPoint;
         private Transform _targetWayPoint;
@@ -37,7 +38,12 @@ namespace FishMovement
             for(int i = 0; i < transform.parent.Find("WayPoints").childCount; ++i)
             {
                 _wayPoints.Add(transform.parent.Find("WayPoints").GetChild(i).gameObject);
-                Destroy( _wayPoints[i].GetComponent<MeshRenderer>() );
+                Destroy( _wayPoints[i].GetComponent<MeshRenderer>() ); 
+            }
+
+            for (int i = 0; i < transform.childCount; ++i)
+            {
+                transform.GetChild(i).GetComponent<MeshRenderer>().materials[0].SetFloat("Speed_fish", _minAnimationSpeed + (Random.value * (_maxAnimationSpeed - _minAnimationSpeed)));
             }
 
             // Get LookAt
