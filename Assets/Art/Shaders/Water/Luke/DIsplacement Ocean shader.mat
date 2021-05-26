@@ -37,23 +37,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Col_foam_distance: 11.07
-    - Col_foam_speed: 1
-    - Col_foam_strenght: 1
-    - Col_foam_tile: 1
-    - Depth_fade: 0.066
+    - Col_foam_distance: -1.1
+    - Col_foam_speed: 0.03
+    - Col_foam_strenght: 0.908
+    - Col_foam_tile: 114.3
+    - Depth_fade: 0.859
     - Depth_object: 0
-    - Dis_speed: 0.003
-    - Displacement_tile: 0.001
-    - Displacement_wave_height: 15
-    - Normal_speed: 5.54
+    - Dis_speed: 0.002
+    - Displacement_tile: 0.002
+    - Displacement_wave_height: 5
+    - Normal_speed: 2.5
     - Normal_strenght: 0.709
-    - Normal_tile: 0.07
-    - SMoothness: 0.8
-    - Wave_foam_Tile: 17
-    - Wave_foam_speed: 0.02
+    - Normal_tile: 0.6
+    - SMoothness: 0.65
+    - Wave_foam_Tile: 80
+    - Wave_foam_speed: 0.15
     m_Colors:
-    - Depth_color: {r: 0, g: 0.02063361, b: 0.2075472, a: 0}
-    - Dip_color: {r: 0.0498843, g: 0.1347775, b: 0.1792453, a: 1}
-    - Foam_color_wave: {r: 0.629272, g: 0.739427, b: 0.745283, a: 0.6745098}
-    - Raise_color: {r: 0.115566, g: 0.3582547, b: 0.4622642, a: 1}
+    - Depth_color: {r: 0, g: 0.17480582, b: 0.2830189, a: 1}
+    - Dip_color: {r: 0.034042373, g: 0.114437364, b: 0.16037738, a: 1}
+    - Foam_color_wave: {r: 0.2469295, g: 0.2924528, b: 0.28761816, a: 0.6745098}
+    - Raise_color: {r: 0.1137255, g: 0.35686275, b: 0.46274513, a: 1}
