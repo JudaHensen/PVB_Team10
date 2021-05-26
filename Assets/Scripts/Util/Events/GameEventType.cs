@@ -1,0 +1,1 @@
+﻿public enum GameEventType { GAME_OVER, DIALOGUE, LOAD_SCENE, WARN, WIN_CONDITION }

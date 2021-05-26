@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewName: Subtitle test
   message: Subtitle bwoi get rekt m8 360 no scoped
-  voiceMessage: {fileID: 0}
   displayTime: 10
   typeSpeed: 0.04
-  parameterName: 
-  parameterValue: 
+  id: 90

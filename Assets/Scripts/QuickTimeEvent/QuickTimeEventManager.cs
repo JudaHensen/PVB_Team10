@@ -11,10 +11,11 @@ namespace QuickTimeEvent
 
         private QuickTimeInputKey _activeInput;
         private int _numOfMistakes = 0;
-        private int _maxNumOfMistakes = 2;
+        [SerializeField] private int _maxNumOfMistakes = 2;
 
-        private float _lifeSpan = 1.5f;
-        private int _numOfEvents = 5;
+        [SerializeField] private float _lifeSpan = 1.5f;
+        [SerializeField] private int _numOfEvents = 5;
+        [SerializeField] private int _delay = 150;
 
         private InputManager _input;
         private QuickTimeEventUI _ui;
@@ -32,9 +33,10 @@ namespace QuickTimeEvent
 
         private async void StartEvent(ControllerInputMode mode)
         {
+            Debug.Log("Starting QTE");
+            // Check if the controller input is set correct
             if (mode != ControllerInputMode.QUICK_TIME)
             {
-                Debug.Log("Mode is wrong!");
                 return;
             }
 
@@ -64,8 +66,7 @@ namespace QuickTimeEvent
                 }
 
                 // delay until next spawn
-                int delay = Mathf.Abs(new System.Random().Next(1000, 5000));
-                await Task.Delay(delay);
+                await Task.Delay(_delay);
             }
 
             // Check Win / Lose

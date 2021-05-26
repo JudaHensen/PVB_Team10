@@ -33,6 +33,8 @@ namespace MainMenu
             _input = GameObject.Find("InputHandler").GetComponent<InputManager>();
 
             _input.Interact += Interact;
+            _input.AnyKey += LoadMainMenu;
+            _input.Back += MenuBack;
 
             // Find all menu's
             foreach (Transform child in transform)
@@ -56,7 +58,45 @@ namespace MainMenu
 
             JoyconInteract();
         }
+        void LoadMainMenu()
+        {
+            Debug.Log(_currentMenu.GetName());
+            if (_currentMenu.GetName() == "Start")
+            {
+                Interact();
+            }
+        }
 
+        private void MenuBack()
+        {
+            string menu = _currentMenu.GetName();
+
+            switch (menu)
+            {
+                case "Main":
+                    menu = "Start";
+                    break;
+                case "Credits":
+                    menu = "Main";
+                    break;
+                default:
+                    break;
+            }
+
+            for (int i = 0; i < _menus.Count; ++i)
+            {
+                if (_menus[i].GetName().ToLower() == menu.ToLower())
+                {
+                    _currentMenu.Deactivate();
+                    _currentMenu = _menus[i];
+                    _currentMenu.SetActive();
+                    break;
+                }
+                else if (i == _menus.Count - 1) Debug.LogError($"Menu: {menu} does not exist!");
+            }
+
+            _menuScroll.GetComponent<MenuScroll>().ScrollTo(_currentMenu.GetPosition().y);
+        }
 
         private void JoyconInteract()
         {
@@ -106,6 +146,16 @@ namespace MainMenu
                 {
                     case "LOADSCENE":
                         string scene = action.Substring(action.IndexOf(":") + 1);
+
+                        switch (scene)
+                        {
+                            case "BovenWater":
+                                _input.SetInputMode(ControllerInputMode.GAMEPLAY);
+                                break;
+                            default:
+                                break;
+                        }
+
                         SceneManager.LoadScene(scene);
                         break;
                     case "OPENMENU":
@@ -114,6 +164,7 @@ namespace MainMenu
 
                         for (int i = 0; i < _menus.Count; ++i)
                         {
+                            Debug.Log(menu);
                             if(_menus[i].GetName().ToLower() == menu.ToLower())
                             {
                                 _currentMenu.Deactivate();

@@ -10,15 +10,18 @@ namespace QuickTimeEvent
     public class QuickTimeDisplay : MonoBehaviour
     {
         [SerializeField] public float _endScale;
+        private float _originalScale;
         private float _lifeSpan;
         private bool _active = false;
-        private CustomUtilities.Timer _timer;
+        
         private RectTransform _rect;
-        private float _originalScale;
-        private QuickTimeEventManager _quickTime;
         private Image _img;
-        private InputManager _input;
 
+
+        private QuickTimeEventManager _quickTime;
+        private CustomUtilities.Timer _timer;
+        
+        private InputManager _input;
         private void Awake()
         {
             _input = FindObjectOfType<InputManager>();
@@ -31,7 +34,7 @@ namespace QuickTimeEvent
 
         private void Interact(QuickTimeInputKey obj)
         {
-            _input.QuickTimeInput -= Interact;
+            _input.QuickTimeInput -= this.Interact;
 
             if (_quickTime.CheckInteraction(obj))
             {
