@@ -71,7 +71,7 @@ namespace FishMovement
                 _wayPointIndex = _wayPoints.IndexOf(_currentWayPoint.gameObject);
                 // Setup target and lookAt
                 _targetWayPoint = _wayPoints[(_wayPointIndex + 1) % _wayPoints.Count].transform;
-                _lookAt.transform.localPosition = _targetWayPoint.position;
+                _lookAt.transform.localPosition = _targetWayPoint.localPosition;
 
                 // Setup timer for changing waypoints
                 distance = Vector3.Distance(_swimPosition, _targetWayPoint.localPosition);
@@ -109,7 +109,7 @@ namespace FishMovement
                     _lookAtPercent = _timer.GetPercentage();
                 }
                 float perc = (_timer.GetPercentage() - _lookAtPercent) / (1 - _lookAtPercent);
-                _lookAt.transform.localPosition = Vector3.Lerp(_targetWayPoint.position, _wayPoints[(_wayPointIndex + 2) % _wayPoints.Count].transform.position, perc);
+                _lookAt.transform.localPosition = Vector3.Lerp(_targetWayPoint.localPosition, _wayPoints[(_wayPointIndex + 2) % _wayPoints.Count].transform.localPosition, perc);
             }
             // Move position
             else transform.localPosition = Vector3.Slerp(_swimPosition, _targetWayPoint.localPosition, _timer.GetPercentage());
