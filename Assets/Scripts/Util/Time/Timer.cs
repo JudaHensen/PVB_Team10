@@ -66,6 +66,11 @@ namespace CustomUtilities
             return _currentTime;
         }
 
+        public float GetPercentage()
+        {
+            return _currentTime / _maxTime;
+        }
+
         public string GetCountdown()
         {
             float time, minutes, seconds;
