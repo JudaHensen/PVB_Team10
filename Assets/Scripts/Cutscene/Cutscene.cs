@@ -9,6 +9,7 @@ namespace Cutscene
     {
         [SerializeField] private string _cutsceneName;
         [SerializeField] private List<GameObject> _transitions = new List<GameObject>();
+        [Header("Time to wait before desrtoying evetything.")]
         
         private int _index = 0;
 
@@ -57,5 +58,6 @@ namespace Cutscene
                 _transitions[i].GetComponent<Transition>().Reset();
             }
         }
+
     }
 }

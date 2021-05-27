@@ -34,7 +34,6 @@ namespace Cutscene
             //StartCutscene("Test");
         }
 
-
         public void StartCutscene(string cutsceneName)
         {
             if(!_isPlaying)

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using UnityEditor.Animations;
 
 namespace Cutscene
 {
@@ -103,8 +104,18 @@ namespace Cutscene
         // Trigger an animation after it's delay
         protected virtual async void TriggerAnimation(Animation anim)
         {
-            await Task.Delay((int) anim.triggerDelay);
-            anim.animator.SetTrigger(anim.triggerName);
+            /*await Task.Delay((int) anim.triggerDelay);
+            anim.animator.SetTrigger(anim.triggerName);*/
+
+            await Task.Delay((int)anim.triggerDelay);
+            Animator[] animators = FindObjectsOfType<Animator>();
+            for(int i = 0; i < animators.Length; ++i)
+            {
+                if(animators[i].runtimeAnimatorController == anim.controller)
+                {
+                    animators[i].SetTrigger(anim.triggerName);
+                }
+            }
         }
 
         // Reset positions
