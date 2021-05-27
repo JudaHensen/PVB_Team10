@@ -35,9 +35,29 @@ MonoBehaviour:
   Path: Assets/Audio/Fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637576314495768738
+  lastModified: 637577276389135154
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-3202366433712062252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/game 10/boat moving
+  m_EditorClassIdentifier: 
+  Name: boat moving
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-3199761521619135486
 MonoBehaviour:
@@ -114,7 +134,7 @@ MonoBehaviour:
   Path: Assets/Audio/Fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637576314496778795
+  lastModified: 637577276389200210
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -162,7 +182,7 @@ MonoBehaviour:
   - {fileID: -6715504877766034553}
   StringsBanks:
   - {fileID: -301624276495686935}
-  stringsBankWriteTime: 637576314496778795
+  stringsBankWriteTime: 637577276389200210
   cacheVersion: 6
 --- !u!114 &2465388405577768809
 MonoBehaviour:
@@ -204,7 +224,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -3061404555803680248}
+  - {fileID: -3202366433712062252}
   MinDistance: 0
   MaxDistance: 0
   Length: 35011
