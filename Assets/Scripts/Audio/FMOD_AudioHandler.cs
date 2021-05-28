@@ -53,6 +53,12 @@ namespace CustomFMOD
             }
         }
 
+        public void ChangeParameter(float value)
+        {
+            FMOD_AudioTrigger trigger = GetTrigger(name);
+            trigger.ChangeParameter(value);
+        }
+
         // Search all Audio Triggers
         public void Search()
         {

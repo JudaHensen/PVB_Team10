@@ -61,6 +61,11 @@ namespace CustomFMOD
             if(_emitter.IsPlaying()) _emitter.Stop();
         }
 
+        public void ChangeParameter(float value)
+        {
+            _emitter.SetParameter(ParameterName, value, false);
+        }
+
 #endregion
 
 #region Getters
