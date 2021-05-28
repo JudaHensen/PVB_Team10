@@ -7,12 +7,14 @@ namespace Cutscene
 {
     public class CutsceneHandler : MonoBehaviour
     {
+        [SerializeField] private Camera _startCamera;
+
         [Header("All cutscenes.")]
         [SerializeField] private List<GameObject> _cutscenes;
 
         public Action OnFinished;
 
-        private Camera _startCamera;
+        //private Camera _startCamera;
         private Camera _cameraReplica;
         private Camera _currentCamera;
 
@@ -23,15 +25,15 @@ namespace Cutscene
 
         private void Start()
         {
-            _startCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+            //_startCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+            //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
             _startCamera.enabled = true;
 
             for (int i = 0; i < Camera.allCamerasCount; ++i)
             {
                 if(Camera.allCameras[i] != _startCamera) Camera.allCameras[i].enabled = false;
             }
-
-            //StartCutscene("Test");
         }
 
         public void StartCutscene(string cutsceneName)
