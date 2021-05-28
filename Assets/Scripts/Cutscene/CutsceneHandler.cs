@@ -60,6 +60,7 @@ namespace Cutscene
                 _cameraReplica = camParent.AddComponent<Camera>();
                 _cameraReplica.CopyFrom(_startCamera);
                 _cameraReplica.enabled = true;
+                _cameraReplica.nearClipPlane = 0.001f;
 
                 _currentCamera = _cameraReplica;
 
