@@ -23,15 +23,13 @@ namespace GameEventManagment
             switch (evt.eventType)
             {
                 case GameEventType.GAME_OVER:
+                    _gameOver.Run(evt.ID);
                     break;
                 case GameEventType.DIALOGUE:
                     _dialogue.Run(evt.ID);
                     break;
-                case GameEventType.LOAD_SCENE:
-                    break;
-                case GameEventType.WARN:
-                    break;
                 case GameEventType.WIN_CONDITION:
+                    _win.Run();
                     break;
                 default:
                     Debug.LogError("Given EventType not valid!");

@@ -32,7 +32,7 @@ namespace MainMenu
         {
             _input = GameObject.Find("InputHandler").GetComponent<InputManager>();
 
-            _input.Interact += Interact;
+            _input.MenuInteract += Interact;
             _input.AnyKey += LoadMainMenu;
             _input.Back += MenuBack;
 

@@ -17,6 +17,7 @@ namespace Controls
         public float TriggerRight;
 
         public Action ToggleMenu;
+        public Action MenuInteract;
         public Action Interact;
 
         // Main Menu
@@ -56,7 +57,7 @@ namespace Controls
 
             // MainMenu Inputs
             controls.MainMenu.AnyKey.performed += ctx => AnyKey?.Invoke();
-            controls.MainMenu.Interact.performed += ctx => Interact?.Invoke();
+            controls.MainMenu.Interact.performed += ctx => MenuInteract?.Invoke();
             controls.MainMenu.Back.performed += ctx => Back?.Invoke();
 
             controls.MainMenu.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
