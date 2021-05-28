@@ -36,6 +36,8 @@ namespace MainMenu
             _interactableIndex = 0;
             _currentInteractable = _interactables[_interactableIndex];
             _currentInteractable.Highlight();
+
+            FindObjectOfType<CustomFMOD.FMOD_AudioHandler>().Trigger("MenuClick");
         }
 
         public void Deactivate()
@@ -71,7 +73,11 @@ namespace MainMenu
 
         public void Right() { _currentInteractable.Right(); }
 
-        public string Interact() { return _currentInteractable.Interact(); }
+        public string Interact() {
+            FindObjectOfType<CustomFMOD.FMOD_AudioHandler>().Trigger("MenuClick");
+
+            return _currentInteractable.Interact();
+        }
 
         public Vector2 GetPosition()
         {

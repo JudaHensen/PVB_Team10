@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8184382968942302378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Underwater ambience/Drone acc
+  m_EditorClassIdentifier: 
+  Name: Drone acc
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-6715504877766034553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,9 +35,145 @@ MonoBehaviour:
   Path: Assets/Audio/Fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637571245278519319
+  lastModified: 637577985077272930
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-5997849208959231244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crane Anim (boat drop)
+  m_EditorClassIdentifier: 
+  Path: event:/Crane Anim (boat drop)
+  guid: f1a906a513c3554ba652e9ecb92a8557
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-5199426150469243726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu sounds/Menu Down initial
+  m_EditorClassIdentifier: 
+  Path: event:/Menu sounds/Menu Down initial
+  guid: 1b242c97ef85dd4bb8e9d24927a8e061
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-4928280304845386732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu sounds/Menu up
+  m_EditorClassIdentifier: 
+  Path: event:/Menu sounds/Menu up
+  guid: bc0ea8af85f5df429b2a8a023e5405f0
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-4657612045986975152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sunken airplaine
+  m_EditorClassIdentifier: 
+  Path: event:/Sunken airplaine
+  guid: 898aeaf1c408c14a8f72baaff01db065
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4468283793124874398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Underwater ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Underwater ambience
+  guid: 51db9ebfa7c932419852904f11179ee3
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1617824257224029493}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 32000
+--- !u!114 &-4257691503494379714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Above waterAmbience/boat moving
+  m_EditorClassIdentifier: 
+  Name: boat moving
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-2578328295933284354
 MonoBehaviour:
@@ -39,6 +195,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-2011913047372241263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu sounds/Menu Down
+  m_EditorClassIdentifier: 
+  Path: event:/Menu sounds/Menu Down
+  guid: b8ee9eb3016dfe4489dda43447435858
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-301624276495686935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,11 +233,11 @@ MonoBehaviour:
   Path: Assets/Audio/Fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637571245279659384
+  lastModified: 637577985078442997
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 798
+    Value: 1278
   Exists: 1
 --- !u!114 &-253181502205192949
 MonoBehaviour:
@@ -96,14 +275,132 @@ MonoBehaviour:
   - {fileID: -301624276495686935}
   - {fileID: -6715504877766034553}
   EditorEvents:
-  - {fileID: 8836834489373859712}
+  - {fileID: -5199426150469243726}
+  - {fileID: 8648929393786146605}
+  - {fileID: -4468283793124874398}
+  - {fileID: -4657612045986975152}
+  - {fileID: 6263214544899083764}
+  - {fileID: -2011913047372241263}
+  - {fileID: -4928280304845386732}
+  - {fileID: 6920399991929450741}
+  - {fileID: -5997849208959231244}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6715504877766034553}
   StringsBanks:
   - {fileID: -301624276495686935}
-  stringsBankWriteTime: 637571245279659384
+  stringsBankWriteTime: 637577985078442997
   cacheVersion: 6
+--- !u!114 &1617824257224029493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Underwater ambience/Drone acc
+  m_EditorClassIdentifier: 
+  Name: Drone acc
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &3444373983699292995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Above waterAmbience/boat moving
+  m_EditorClassIdentifier: 
+  Name: boat moving
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &6263214544899083764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu sounds/Menu click
+  m_EditorClassIdentifier: 
+  Path: event:/Menu sounds/Menu click
+  guid: a84bcac4c49d8a42aba25b82bd589215
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &6920399991929450741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu sounds/Menu up initial
+  m_EditorClassIdentifier: 
+  Path: event:/Menu sounds/Menu up initial
+  guid: cfa2cd4aaf1370449291d14656f27c95
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &8648929393786146605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Above waterAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Above waterAmbience
+  guid: 230a52168f543b48a245567fa2dd088a
+  Banks:
+  - {fileID: -6715504877766034553}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4257691503494379714}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 35011
 --- !u!114 &8836834489373859712
 MonoBehaviour:
   m_ObjectHideFlags: 0

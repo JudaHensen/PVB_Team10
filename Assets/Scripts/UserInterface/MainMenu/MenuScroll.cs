@@ -30,7 +30,19 @@ namespace MainMenu
 
             _sinRotation = 0;
             _active = true;
-            Debug.Log($"Scroll from: {_startPosition} to {_endPosition}");
+
+            if(_startPosition - _endPosition < 0)
+            {
+                Debug.Log("UP!!");
+                FindObjectOfType<CustomFMOD.FMOD_AudioHandler>().Trigger("MenuUp");
+            }
+            else
+            {
+                Debug.Log("DOWN!!");
+                FindObjectOfType<CustomFMOD.FMOD_AudioHandler>().Trigger("MenuDown");
+            }
+
+            //Debug.Log($"Scroll from: {_startPosition} to {_endPosition}");
         }
         
         void Update()
