@@ -124,7 +124,8 @@ namespace Controls
 
         private void OnEnable()
         {
-            controls.MainMenu.Enable();
+            // op gameplay voor debug doeleinden. voor normaal gebruik naar main menu veranderen.
+            controls.Gameplay.Enable();
         }
 
         private void OnDisable()

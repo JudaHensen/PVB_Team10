@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4504812157872711625}
   - component: {fileID: 7941150679676699832}
+  - component: {fileID: 6717568376776712721}
   m_Layer: 0
   m_Name: CenterCollider
   m_TagString: Zeemijn
@@ -43,6 +44,19 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &6717568376776712721
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7915150842928495445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8325763030627419510
 GameObject:
