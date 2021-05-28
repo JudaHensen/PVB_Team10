@@ -8,8 +8,8 @@ public class ZeemijnDetectie : MonoBehaviour
 {
     private InputManager _input;
     public Action PlantExplosive;
-    private bool detectedMine = false;
-    
+    private bool _detectedMine = false;
+    private bool _isInteracting = false;
     public Action<bool> canInteract;
 
     private void Start()
@@ -21,12 +21,12 @@ public class ZeemijnDetectie : MonoBehaviour
     private void SetDetection(bool state)
     {
         canInteract?.Invoke(state);
-        detectedMine = state;
+        _detectedMine = state;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Zeemijn")
+        if(other.transform.tag == "Zeemijn" && !_isInteracting)
         {
             SetDetection(true);
             Debug.Log("Got one");
@@ -44,9 +44,12 @@ public class ZeemijnDetectie : MonoBehaviour
 
     void StartQuickTimeEvent()
     {
-        if (detectedMine)
+        Debug.Log("Starting QTE!!");    
+        if (_detectedMine)
         {
             _input.SetInputMode(ControllerInputMode.QUICK_TIME);
+            _isInteracting = true;
+            SetDetection(false);
         }
     }
 }
@@ -62,10 +65,10 @@ public class ZeemijnDetectie : MonoBehaviour
 //{
 //    // Draw line in scene view to visualize raycast
 //    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
-//    detectedMine = true;
+//    _detectedMine = true;
 //}
 //else
 //{
 //    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _range, Color.red);
-//    detectedMine = false;
+//    _detectedMine = false;
 //}
