@@ -1,23 +1,29 @@
 fileFormatVersion: 2
-guid: d021c7ea9001b314f9e57d8dc61facee
+guid: 20eab06c8bb2a404597676d89902f0c1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Bomb grab
+    second: Take 001
   - first:
-      74: 834373250933161600
-    second: Bomb Place
+      74: 8391212508564779786
+    second: exp_idle
   - first:
-      74: -1487441550371671744
-    second: Bomb button press
+      74: -8714830535053605393
+    second: exp_grab
   - first:
-      74: -2573036322962952596
-    second: Bomb line up
+      74: -7760352706413651494
+    second: exp_place
   - first:
-      74: -4234831738556378074
-    second: Bomb back to idle
+      74: 1989716035567865859
+    second: exp_lineup
+  - first:
+      74: 7729848567750398843
+    second: exp_push
+  - first:
+      74: 6691806035175281394
+    second: exp_back to idle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -47,18 +53,47 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Bomb grab
+      name: Take 001
       takeName: Take 001
       internalID: 0
-      firstFrame: 100
-      lastFrame: 165
+      firstFrame: 1
+      lastFrame: 600
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: exp_idle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -76,7 +111,36 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
-      name: Bomb Place
+      name: exp_grab
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 100
+      lastFrame: 165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: exp_place
       takeName: Take 001
       internalID: 0
       firstFrame: 180
@@ -105,36 +169,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
-      name: Bomb button press
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 410
-      lastFrame: 431
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
-    - serializedVersion: 16
-      name: Bomb line up
+      name: exp_lineup
       takeName: Take 001
       internalID: 0
       firstFrame: 340
@@ -163,10 +198,39 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
-      name: Bomb back to idle
+      name: exp_push
       takeName: Take 001
       internalID: 0
-      firstFrame: 415
+      firstFrame: 410
+      lastFrame: 431
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: exp_back to idle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 432
       lastFrame: 480
       wrapMode: 0
       orientationOffsetY: 0
