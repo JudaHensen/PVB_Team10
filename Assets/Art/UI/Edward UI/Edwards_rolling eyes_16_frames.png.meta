@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: b03fce2cdc2644c4d86501fe2949e80b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7183950151498919185
+    second: Edwards_rolling eyes_16_frames_0
+  - first:
+      213: 6078960518889169888
+    second: Edwards_rolling eyes_16_frames_1
+  - first:
+      213: 3260032874683409528
+    second: Edwards_rolling eyes_16_frames_2
+  - first:
+      213: 2501191086792712080
+    second: Edwards_rolling eyes_16_frames_3
+  - first:
+      213: -1708318307121309894
+    second: Edwards_rolling eyes_16_frames_4
+  - first:
+      213: -4468855986898088935
+    second: Edwards_rolling eyes_16_frames_5
+  - first:
+      213: -6823807684959206278
+    second: Edwards_rolling eyes_16_frames_6
+  - first:
+      213: -9108544600751731049
+    second: Edwards_rolling eyes_16_frames_7
+  - first:
+      213: -4317487859334957018
+    second: Edwards_rolling eyes_16_frames_8
+  - first:
+      213: 4633945179188026883
+    second: Edwards_rolling eyes_16_frames_9
+  - first:
+      213: 6813928255836608365
+    second: Edwards_rolling eyes_16_frames_10
+  - first:
+      213: 5339656527203057086
+    second: Edwards_rolling eyes_16_frames_11
+  - first:
+      213: -2791431448221697174
+    second: Edwards_rolling eyes_16_frames_12
+  - first:
+      213: 1595003801643314034
+    second: Edwards_rolling eyes_16_frames_13
+  - first:
+      213: 7042487852908870441
+    second: Edwards_rolling eyes_16_frames_14
+  - first:
+      213: -1271824136109491494
+    second: Edwards_rolling eyes_16_frames_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe21bcf366b7d4c90800000000000000
+      internalID: -7183950151498919185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3630c526ecc5450800000000000000
+      internalID: 6078960518889169888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_2
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874a99b80a6fd3d20800000000000000
+      internalID: 3260032874683409528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_3
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f17a3aa0406b220800000000000000
+      internalID: 2501191086792712080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_4
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37dcbcfc85da48e0800000000000000
+      internalID: -1708318307121309894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_5
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ccf8c282f6bf1c0800000000000000
+      internalID: -4468855986898088935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_6
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a740d6a8017fc41a0800000000000000
+      internalID: -6823807684959206278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_7
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e046bd1f2f79180800000000000000
+      internalID: -9108544600751731049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_8
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628374ebaa33514c0800000000000000
+      internalID: -4317487859334957018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_9
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ed22ab6941f4040800000000000000
+      internalID: 4633945179188026883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_10
+      rect:
+        serializedVersion: 2
+        x: 3880
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67532e95afef8e50800000000000000
+      internalID: 6813928255836608365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_11
+      rect:
+        serializedVersion: 2
+        x: 4268
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdb88e12554a1a40800000000000000
+      internalID: 5339656527203057086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_12
+      rect:
+        serializedVersion: 2
+        x: 4656
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b34e133e7d249d0800000000000000
+      internalID: -2791431448221697174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_13
+      rect:
+        serializedVersion: 2
+        x: 5044
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27be854c187922610800000000000000
+      internalID: 1595003801643314034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_14
+      rect:
+        serializedVersion: 2
+        x: 5432
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bf2a7b361fbb160800000000000000
+      internalID: 7042487852908870441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edwards_rolling eyes_16_frames_15
+      rect:
+        serializedVersion: 2
+        x: 5820
+        y: 0
+        width: 388
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adafc66cfa2995ee0800000000000000
+      internalID: -1271824136109491494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3efd6f3b86a284b48bf160916fa3aaa3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
