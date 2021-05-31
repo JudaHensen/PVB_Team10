@@ -41,7 +41,7 @@ Material:
     - Col_foam_speed: 0.03
     - Col_foam_strenght: 0.908
     - Col_foam_tile: 114.3
-    - Depth_fade: 0.859
+    - Depth_fade: 1
     - Depth_object: 0
     - Dis_speed: 0.002
     - Displacement_tile: 0.002

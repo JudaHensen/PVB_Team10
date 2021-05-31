@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Caustic shader
+  m_Name: Low Op CS
   m_Shader: {fileID: -6465566751694194690, guid: eb45f434861ac4f41b89ed8c749353e0,
     type: 3}
   m_ShaderKeywords: 
@@ -28,17 +28,17 @@ Material:
     - Distortion_speed: 0.08
     - Vector1_153E791E: 0.05
     - Vector1_19CE2339: 8
-    - Vector1_2F33FCD5: 0.42
+    - Vector1_2F33FCD5: 0.35
     - Vector1_33D24E69: 0.3
     - Vector1_3AF751CC: -3.87
-    - Vector1_4D63B50D: -17.4
-    - Vector1_58A6E70B: 0.843
+    - Vector1_4D63B50D: -16.63
+    - Vector1_58A6E70B: 0.383
     - Vector1_7351091C: 0.003
     - Vector1_797B62E6: 1
-    - Vector1_7AE27D4C: 2.1
+    - Vector1_7AE27D4C: 2.84
     - Vector1_8ADF23FA: 3025.5
     - Vector1_A7B5FB82: -0.003
-    - Vector1_B0B924E1: 0
+    - Vector1_B0B924E1: 1.26
     - Vector1_B381D303: 0.00004
     - Vector1_C4976AA3: -9.45
     - Vector1_EC3AF3C4: 3.5
