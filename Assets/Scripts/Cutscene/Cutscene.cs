@@ -9,7 +9,7 @@ namespace Cutscene
     {
         [SerializeField] private string _cutsceneName;
         [SerializeField] private List<GameObject> _transitions = new List<GameObject>();
-        [Header("Time to wait before desrtoying evetything.")]
+        [SerializeField] private bool _createNewCamera = true;
         
         private int _index = 0;
 
@@ -57,6 +57,11 @@ namespace Cutscene
             {
                 _transitions[i].GetComponent<Transition>().Reset();
             }
+        }
+
+        public bool GetNewCamera()
+        {
+            return _createNewCamera;
         }
 
     }
