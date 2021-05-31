@@ -52,19 +52,22 @@ namespace Cutscene
 
                 _isPlaying = true;
 
-                _startCamera.enabled = false;
+                if(_currentCutscene.GetNewCamera())
+                {
+                    _startCamera.enabled = false;
 
-                transform.position = _startCamera.transform.position;
+                    transform.position = _startCamera.transform.position;
 
-                GameObject camParent = new GameObject("CameraReplica");
-                camParent.transform.parent = transform;
+                    GameObject camParent = new GameObject("CameraReplica");
+                    camParent.transform.parent = transform;
 
-                _cameraReplica = camParent.AddComponent<Camera>();
-                _cameraReplica.CopyFrom(_startCamera);
-                _cameraReplica.enabled = true;
-                _cameraReplica.nearClipPlane = 0.001f;
+                    _cameraReplica = camParent.AddComponent<Camera>();
+                    _cameraReplica.CopyFrom(_startCamera);
+                    _cameraReplica.enabled = true;
+                    _cameraReplica.nearClipPlane = 0.001f;
 
-                _currentCamera = _cameraReplica;
+                    _currentCamera = _cameraReplica;
+                }
 
                 ExecuteCutscene();
             }
