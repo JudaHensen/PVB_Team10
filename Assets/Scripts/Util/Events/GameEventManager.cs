@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using World;
+using System;
 
 namespace GameEventManagment
 {
@@ -11,6 +12,8 @@ namespace GameEventManagment
         private GameEventDialogue _dialogue;
         private GameEventGameOver _gameOver;
         private GameEventWin _win;
+
+        public Action EndGame;
 
         private void Start()
         {
@@ -24,12 +27,14 @@ namespace GameEventManagment
             {
                 case GameEventType.GAME_OVER:
                     _gameOver.Run(evt.ID);
+                    EndGame?.Invoke();
                     break;
                 case GameEventType.DIALOGUE:
                     _dialogue.Run(evt.ID);
                     break;
                 case GameEventType.WIN_CONDITION:
                     _win.Run();
+                    EndGame?.Invoke();
                     break;
                 default:
                     Debug.LogError("Given EventType not valid!");
