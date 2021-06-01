@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 277488201}
   - component: {fileID: 277488200}
   m_Layer: 0
-  m_Name: Sonar
+  m_Name: Sonar_MineHunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
   _height: 25
   _range: 75
   _speed: 36
-  _visible: 0
+  _visible: 1
   _sound: {fileID: 8300000, guid: f04437f932a4e1c4884c5ee33ea7f07a, type: 3}
   _foundDelay: 2
   _destroyRange: 150
@@ -2339,7 +2339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2215a2711886c48893724b87a8c343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shipSonarName: Sonar
+  _shipSonarName: Sonar_MineHunter
   _mineUIPrefab: {fileID: 8348566164644787632, guid: aabaebfb2d7392d47b481b45a1526988,
     type: 3}
   _rotationOffset: 0
@@ -3382,7 +3382,7 @@ PrefabInstance:
     - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
         type: 3}
       propertyPath: voiceLines.Array.size
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
         type: 3}
@@ -3426,8 +3426,58 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8b65dabe3a6b4e5448287464ff838ed5,
         type: 2}
+    - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
+        type: 3}
+      propertyPath: voiceLines.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d576cc7c704d974faffdfb63ddf24de,
+        type: 2}
+    - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
+        type: 3}
+      propertyPath: voiceLines.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3157b1a372092544294ef28adeba28bd,
+        type: 2}
+    - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
+        type: 3}
+      propertyPath: voiceLines.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6319fb6399c9da4e8ba609396e226e5,
+        type: 2}
+    - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
+        type: 3}
+      propertyPath: voiceLines.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9feaeb663a3338e479ec1580cb11b292,
+        type: 2}
+    - target: {fileID: 6824865363898334876, guid: f33720495f4294f468622b080c5104eb,
+        type: 3}
+      propertyPath: voiceLines.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d67d92b76b60b244a5c4f28130efc66,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f33720495f4294f468622b080c5104eb, type: 3}
+--- !u!1 &1028961634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6824865363898334849, guid: f33720495f4294f468622b080c5104eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1028961633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1028961635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028961634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4cbeb41ffc35344af786944e185074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialoges: 0d0000000e0000000f0000001000000011000000
+  _dialogeDelay: 250
 --- !u!1 &1029851484
 GameObject:
   m_ObjectHideFlags: 0
@@ -5134,7 +5184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 110, y: 20}
+  m_SizeDelta: {x: 209, y: 15}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1479266460
 MonoBehaviour:
