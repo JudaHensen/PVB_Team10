@@ -57,6 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8594eaa856e15984ab6ab65ac3d0bc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 5584939542802791491, guid: 3096b94dc68f5d34bbb464a13f50f77d,
+    type: 3}
 --- !u!1 &444995592662924778
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,9 +69,10 @@ GameObject:
   m_Component:
   - component: {fileID: 444995592662924791}
   - component: {fileID: 444995592662924779}
+  - component: {fileID: 8669405766672623103}
   m_Layer: 0
   m_Name: Mine
-  m_TagString: Zeemijn
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +108,19 @@ MonoBehaviour:
   uniqueID: 
   location: {x: 0, y: 0}
   _visible: 1
+--- !u!135 &8669405766672623103
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444995592662924778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &444995593203141605
 GameObject:
   m_ObjectHideFlags: 0

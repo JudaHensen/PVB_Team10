@@ -14,7 +14,9 @@ public class DroneMovement : MonoBehaviour
 
     public Rigidbody DroneRb;
 
+    [SerializeField]
     private Vector2 _movex = new Vector2();
+    [SerializeField]
     private Vector2 _movey = new Vector2();
 
     private InputManager _input;

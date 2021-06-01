@@ -22,6 +22,8 @@ public class InteractionUI : MonoBehaviour
     // Update is called once per frame
     public void SetSprite(bool state)
     {
+        if (!img) { return; }
+
         ControllerType _controllerType = _input.GetControllerType();
         
         if (_controllerType == ControllerType.PS4)
