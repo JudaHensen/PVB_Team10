@@ -393,7 +393,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Audio/Fmod/Groep 10 boven water.fspro
+  sourceProjectPath: Assets/Audio/Fmod/MinehunterAudio.fspro
   sourceBankPath: Assets\Audio\Fmod\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
