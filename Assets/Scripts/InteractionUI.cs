@@ -10,16 +10,16 @@ public class InteractionUI : MonoBehaviour
     private InputManager _input;
     private ZeemijnDetectie _detectie;
 
-    private Image _img;
+    public Image img;
 
     public Sprite ps;
     public Sprite xb;
     void Start()
     {
         _input = FindObjectOfType<InputManager>();
-        _img = GetComponent<Image>();
         _detectie = FindObjectOfType<ZeemijnDetectie>();
-        _detectie.canInteract += SetSprite;
+        _detectie.CanInteract += SetSprite;
+        SetSprite(false);
     }
 
     // Update is called once per frame
@@ -29,18 +29,25 @@ public class InteractionUI : MonoBehaviour
         
         if (_controllerType == ControllerType.PS4)
         {
-            _img.sprite = ps;
+            img.sprite = ps;
         }
         else if (_controllerType == ControllerType.XBOX)
         {
-            _img.sprite = xb;
+            img.sprite = xb;
         }
         else
         {
             Debug.LogError("Could Not Get Controller!");
         }
 
-        _img.enabled = state;
+        if (state)
+        {
+            img.color = new Color(255f, 255f, 255f, 0.8f);
+        }
+        else
+        {
+            img.color = Color.white;
+        }
         
     }
 }

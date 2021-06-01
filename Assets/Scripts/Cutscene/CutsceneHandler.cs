@@ -25,8 +25,7 @@ namespace Cutscene
 
         private void Start()
         {
-            //_startCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-            //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            _startCamera = Camera.main;
 
             _startCamera.enabled = true;
 

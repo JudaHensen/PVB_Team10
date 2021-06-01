@@ -10,9 +10,12 @@ public class ZeemijnDetectie : MonoBehaviour
     public Action PlantExplosive;
     private bool _detectedMine = false;
     private bool _isInteracting = false;
-    public Action<bool> canInteract;
+    public Action<bool> CanInteract;
+    public Action<Transform> InteractedMine;
 
-    private void Start()
+    private Transform _mine;
+
+    private void Awake()
     {
         _input = FindObjectOfType<InputManager>();
         _input.Interact += StartQuickTimeEvent;
@@ -20,7 +23,7 @@ public class ZeemijnDetectie : MonoBehaviour
 
     private void SetDetection(bool state)
     {
-        canInteract?.Invoke(state);
+        CanInteract?.Invoke(state);
         _detectedMine = state;
     }
 
@@ -29,6 +32,7 @@ public class ZeemijnDetectie : MonoBehaviour
         if(other.transform.tag == "Zeemijn" && !_isInteracting)
         {
             SetDetection(true);
+            _mine = other.transform;
         }
     }
 
@@ -37,6 +41,7 @@ public class ZeemijnDetectie : MonoBehaviour
         if (other.transform.tag == "Zeemijn")
         {
             SetDetection(false);
+            _mine = null;
         }
         
     }
@@ -47,6 +52,7 @@ public class ZeemijnDetectie : MonoBehaviour
         if (_detectedMine)
         {
             _input.SetInputMode(ControllerInputMode.QUICK_TIME);
+            InteractedMine?.Invoke(_mine);
             _isInteracting = true;
             SetDetection(false);
         }

@@ -17,7 +17,16 @@ public class MineLocation : MonoBehaviour
 
         uniqueID = Guid.NewGuid().ToString();
 
-      //  GetComponent<MeshRenderer>().enabled = _visible;
+        // Zetde mesh renderer aan/uit van de bovenwater zeemijnen.
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).name.StartsWith("Mine"))
+            {
+                transform.GetChild(i).GetComponent<MeshRenderer>().enabled = _visible;
+            }
+
+        }
+
     }
 
     private void Update()
