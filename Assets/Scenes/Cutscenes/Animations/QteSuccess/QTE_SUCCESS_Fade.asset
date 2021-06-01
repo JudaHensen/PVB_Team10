@@ -15,4 +15,4 @@ MonoBehaviour:
   animationName: Win fade
   controller: {fileID: 9100000, guid: 5c3da1ceddbbe1e43a125155e3230d0c, type: 2}
   triggerName: FadeIn
-  triggerDelay: 10000
+  triggerDelay: 7900

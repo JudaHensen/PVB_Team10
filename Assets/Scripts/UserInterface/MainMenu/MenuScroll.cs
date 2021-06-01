@@ -30,7 +30,7 @@ namespace MainMenu
 
             _sinRotation = 0;
             _active = true;
-            Debug.Log($"Scroll from: {_startPosition} to {_endPosition}");
+            //Debug.Log($"Scroll from: {_startPosition} to {_endPosition}");
         }
         
         void Update()

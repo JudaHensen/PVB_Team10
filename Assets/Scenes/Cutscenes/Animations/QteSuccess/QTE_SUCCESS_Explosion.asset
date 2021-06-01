@@ -15,4 +15,4 @@ MonoBehaviour:
   animationName: Explosion
   controller: {fileID: 9100000, guid: 28a983dcaf3fc0e4abb16d998810c90c, type: 2}
   triggerName: Explode
-  triggerDelay: 9000
+  triggerDelay: 7000

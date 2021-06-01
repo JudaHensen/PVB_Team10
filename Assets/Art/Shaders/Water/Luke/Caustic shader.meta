@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art/Shaders/Water/Luke/Caustic shader.meta
 guid: 33a1bfd2eae024f4eb1c4907252c6c5e
+=======
+guid: 07df3c662cbf09a4189237a6f6779465
+>>>>>>> origin/finalCutscenes:Assets/Art/Materials/seeweed.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
