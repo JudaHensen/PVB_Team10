@@ -15,4 +15,4 @@ MonoBehaviour:
   animationName: QTE_FAIL_FADE
   controller: {fileID: 9100000, guid: 5c3da1ceddbbe1e43a125155e3230d0c, type: 2}
   triggerName: QTE_FAIL
-  triggerDelay: 4750
+  triggerDelay: 5000
