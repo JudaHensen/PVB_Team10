@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4564813276212942811}
   m_Layer: 0
   m_Name: ExplosionRange
-  m_TagString: Untagged
+  m_TagString: Zeemijn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444995592556114079}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.5
@@ -66,11 +66,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444995592662924791}
-  - component: {fileID: 444995592662924788}
   - component: {fileID: 444995592662924779}
   m_Layer: 0
   m_Name: Mine
-  m_TagString: Mine
+  m_TagString: Zeemijn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,19 +90,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &444995592662924788
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444995592662924778}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &444995592662924779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +118,7 @@ GameObject:
   - component: {fileID: 610543579490894954}
   m_Layer: 0
   m_Name: InteractionRange
-  m_TagString: Untagged
+  m_TagString: Zeemijn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +145,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444995593203141605}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 10

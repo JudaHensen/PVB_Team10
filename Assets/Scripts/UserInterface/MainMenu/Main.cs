@@ -60,7 +60,7 @@ namespace MainMenu
         }
         void LoadMainMenu()
         {
-            Debug.Log(_currentMenu.GetName());
+            //Debug.Log(_currentMenu.GetName());
             if (_currentMenu.GetName() == "Start")
             {
                 Interact();
@@ -134,12 +134,12 @@ namespace MainMenu
 
         private void Interact()
         {
-            Debug.Log("Interact!!!");
+            //Debug.Log("Interact!!!");
             if (_delay.Completed())
             {
                 _delay.Restart();
                 string action = _currentMenu.Interact();
-                Debug.Log($"Received action: {action}");
+                //Debug.Log($"Received action: {action}");
 
                 // Deteremine what the current interaction is, and act accordingly
                 switch( action.Remove(action.IndexOf(":")).ToUpper() )
@@ -164,7 +164,7 @@ namespace MainMenu
 
                         for (int i = 0; i < _menus.Count; ++i)
                         {
-                            Debug.Log(menu);
+                            //Debug.Log(menu);
                             if(_menus[i].GetName().ToLower() == menu.ToLower())
                             {
                                 _currentMenu.Deactivate();

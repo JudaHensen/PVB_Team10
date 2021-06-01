@@ -8,7 +8,6 @@ using System;
 public class InteractionUI : MonoBehaviour
 {
     private InputManager _input;
-    private ZeemijnDetectie _detectie;
 
     public Image img;
 
@@ -17,13 +16,11 @@ public class InteractionUI : MonoBehaviour
     void Start()
     {
         _input = FindObjectOfType<InputManager>();
-        _detectie = FindObjectOfType<ZeemijnDetectie>();
-        _detectie.CanInteract += SetSprite;
         SetSprite(false);
     }
 
     // Update is called once per frame
-    void SetSprite(bool state)
+    public void SetSprite(bool state)
     {
         ControllerType _controllerType = _input.GetControllerType();
         
@@ -42,11 +39,11 @@ public class InteractionUI : MonoBehaviour
 
         if (state)
         {
-            img.color = new Color(255f, 255f, 255f, 0.8f);
+            img.color = new Color32(255, 255, 255, 255);
         }
         else
         {
-            img.color = Color.white;
+            img.color = new Color32(85, 85, 95, 100);
         }
         
     }

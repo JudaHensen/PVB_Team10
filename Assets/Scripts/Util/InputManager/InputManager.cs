@@ -71,9 +71,12 @@ namespace Controls
 
         private void CheckGamepad()
         {
+            string gamepad;
+
             try
             {
-                Debug.Log(Gamepad.current.name);
+                gamepad = Gamepad.current.name;
+                //Debug.Log(Gamepad.current.name);
             }
             catch
             {
@@ -81,12 +84,12 @@ namespace Controls
                 return;
             }
 
-            if (Gamepad.current.name.Contains("DualShock4"))
+            if (gamepad.Contains("DualShock4"))
             {
                 UsedController?.Invoke(ControllerType.PS4);
                 controllerUsed = ControllerType.PS4;
             }
-            else if (Gamepad.current.name.Contains("XInputController"))
+            else if (gamepad.Contains("XInputController"))
             {
                 UsedController?.Invoke(ControllerType.XBOX);
                 controllerUsed = ControllerType.XBOX;
@@ -103,7 +106,7 @@ namespace Controls
             {
                 case ControllerInputMode.GAMEPLAY:
                     controls.Gameplay.Enable();
-                    Debug.Log("Set to GP");
+                    //Debug.Log("Set to GP");
                     break;
                 case ControllerInputMode.QUICK_TIME:
                     controls.QuickTime.Enable();

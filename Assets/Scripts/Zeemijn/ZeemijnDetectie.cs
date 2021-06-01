@@ -23,6 +23,7 @@ public class ZeemijnDetectie : MonoBehaviour
 
     private void SetDetection(bool state)
     {
+        Debug.Log("Detection");
         CanInteract?.Invoke(state);
         _detectedMine = state;
     }
@@ -31,6 +32,7 @@ public class ZeemijnDetectie : MonoBehaviour
     {
         if(other.transform.tag == "Zeemijn" && !_isInteracting)
         {
+            Debug.Log("Entered interaction range");
             SetDetection(true);
             _mine = other.transform;
         }
@@ -48,9 +50,9 @@ public class ZeemijnDetectie : MonoBehaviour
 
     void StartQuickTimeEvent()
     {
-        Debug.Log("Starting QTE!!");    
         if (_detectedMine)
         {
+            Debug.Log("Starting QTE");    
             _input.SetInputMode(ControllerInputMode.QUICK_TIME);
             InteractedMine?.Invoke(_mine);
             _isInteracting = true;

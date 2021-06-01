@@ -25,7 +25,7 @@ public class SonarUI : MonoBehaviour
     private void Awake()
     {
         // Setup variables & actions
-        Sonar sonar = GameObject.Find(_shipSonarName).GetComponent<Sonar>();
+        Sonar sonar = FindObjectOfType<Sonar>();
         sonar.UpdateSonarUI += UpdateSonarUI;
         sonar.DetectMine += DetectMine;
         sonar.RemoveMine += RemoveMine;
