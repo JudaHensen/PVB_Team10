@@ -10,7 +10,7 @@ public class QuickTimeEventPosition : MonoBehaviour
     private bool _isPositioning = false;
     private Transform _target;
     private float _distance = 2f;
-    private float _yPosOffset = 12f;
+    private float _yPosOffset = 5f;
     private float _yLookOffset = 4f;
     void Start()
     {
@@ -30,7 +30,9 @@ public class QuickTimeEventPosition : MonoBehaviour
         if (_isPositioning)
         {
             Vector3 targetPos = new Vector3(transform.position.x, _target.position.y + _yPosOffset, transform.position.z);
-            Vector3 pos = Vector3.Lerp(transform.position, targetPos, 0.01f);
+            Vector3 pos = Vector3.Lerp(transform.position, targetPos, 0.1f);
+
+            transform.position = pos;
             transform.LookAt(_target.position + new Vector3(0f, _yLookOffset, 0f));
 
             if(Vector3.Distance(transform.position, _target.position) > _distance)

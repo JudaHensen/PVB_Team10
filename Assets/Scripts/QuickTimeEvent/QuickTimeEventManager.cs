@@ -17,6 +17,9 @@ namespace QuickTimeEvent
         [SerializeField] private int _numOfEvents = 5;
         [SerializeField] private int _delay = 150;
 
+        private string _cutsceneLose = "FAIL";
+        private string _cutsceneWin = "WIN";
+
         private InputManager _input;
         private QuickTimeEventUI _ui;
 
@@ -77,11 +80,21 @@ namespace QuickTimeEvent
             {
                 Debug.Log("YU FUKT UP S0N!!");
                 // Do stuff / G A M E   O V E R
+                // Obtain cutscene handler
+                Cutscene.CutsceneHandler _cutsceneHandler = GameObject.Find("CutsceneManager").GetComponent<Cutscene.CutsceneHandler>();
+
+                // Play cutscene
+                _cutsceneHandler.StartCutscene(_cutsceneLose);
 
             }
             else
             {
                 _input.SetInputMode(ControllerInputMode.MAIN_MENU);
+                // Obtain cutscene handler
+                Cutscene.CutsceneHandler _cutsceneHandler = GameObject.Find("CutsceneManager").GetComponent<Cutscene.CutsceneHandler>();
+
+                // Play cutscene
+                _cutsceneHandler.StartCutscene(_cutsceneWin);
             }
         }
 
