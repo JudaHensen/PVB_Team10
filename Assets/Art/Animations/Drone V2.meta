@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art/Animations/Drone V2.meta
 guid: 31de3adcc7ff64c4581921196de48b04
+=======
+guid: c7ad19cefea4151458720f67fa5bad71
+>>>>>>> origin/finalCutscenes:Assets/Audio/Fmod/Metadata/DAWAsset.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
