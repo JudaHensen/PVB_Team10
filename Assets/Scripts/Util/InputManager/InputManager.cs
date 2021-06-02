@@ -128,7 +128,7 @@ namespace Controls
 
         private void OnEnable()
         {
-            controls.MainMenu.Enable();
+            controls.Gameplay.Enable();
         }
 
         private void OnDisable()

@@ -20,6 +20,9 @@ namespace QuickTimeEvent
         private InputManager _input;
         private QuickTimeEventUI _ui;
 
+        [SerializeField]
+        private Animator _armAnim;
+
         private QuickTimeInputKey _currentType;
         private bool _interactionCorrect = false;
 
@@ -33,7 +36,7 @@ namespace QuickTimeEvent
 
         private async void StartEvent(ControllerInputMode mode)
         {
-            Debug.Log("Starting QTE");
+            //Debug.Log("Starting QTE");
             // Check if the controller input is set correct
             if (mode != ControllerInputMode.QUICK_TIME)
             {
@@ -42,7 +45,7 @@ namespace QuickTimeEvent
 
             // Small delay before first ui element spawns
             await Task.Delay(250);
-
+            _armAnim.SetTrigger("grabDrone");
             for (int i = 0; i <= _numOfEvents; ++i)
             {
                 // spawn UI
@@ -84,7 +87,6 @@ namespace QuickTimeEvent
 
         public bool CheckInteraction(QuickTimeInputKey type)
         {
-            Debug.Log($"Pressed: {type}");
             if (type == _currentType)
             {
                 _interactionCorrect = true;

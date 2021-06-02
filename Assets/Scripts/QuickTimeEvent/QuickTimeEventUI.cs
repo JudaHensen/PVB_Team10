@@ -40,7 +40,7 @@ namespace QuickTimeEvent
         // Replace string with matching enum
         public void CreateQuickTimeDisplay(QuickTimeInputKey type, float lifeSpan)
         {
-            Debug.Log($"Spawned {type}");
+            //Debug.Log($"Spawned {type}");
             // find new position
             Vector2 pos = FindNewPosition();
 
@@ -101,7 +101,7 @@ namespace QuickTimeEvent
         private Sprite SetSprite(QuickTimeInputKey key)
         {
             ControllerType _controllerType = _input.GetControllerType();
-            Debug.Log(_controllerType);
+            //Debug.Log(_controllerType);
             // Playstation Sprites
             if(_controllerType == ControllerType.PS4)
             {
