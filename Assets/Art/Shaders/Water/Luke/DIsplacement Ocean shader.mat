@@ -39,9 +39,9 @@ Material:
     m_Floats:
     - Col_foam_distance: -1.1
     - Col_foam_speed: 0.03
-    - Col_foam_strenght: 0.908
+    - Col_foam_strenght: 1
     - Col_foam_tile: 114.3
-    - Depth_fade: 1
+    - Depth_fade: 0.079
     - Depth_object: 0
     - Dis_speed: 0.002
     - Displacement_tile: 0.002
@@ -50,7 +50,7 @@ Material:
     - Normal_strenght: 0.709
     - Normal_tile: 0.6
     - SMoothness: 0.65
-    - Wave_foam_Tile: 80
+    - Wave_foam_Tile: 82.17
     - Wave_foam_speed: 0.15
     m_Colors:
     - Depth_color: {r: 0, g: 0.17480582, b: 0.2830189, a: 1}
