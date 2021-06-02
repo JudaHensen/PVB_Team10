@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{16520a23-548f-483b-a245-567fa2dd088a}">
 		<property name="name">
-			<value>game 10</value>
+			<value>Above waterAmbience</value>
 		</property>
 		<property name="outputFormat">
 			<value>5</value>
 		</property>
 		<relationship name="folder">
-			<destination>{01723de9-4d0e-4af9-bedf-f5e7c7a405a4}</destination>
+			<destination>{faa3495c-9288-4398-b14b-de3c0f17c80f}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{7fa25a55-e98d-43b5-8e41-c29f1aaef27d}</destination>
@@ -527,6 +527,10 @@
 			<destination>{796ac30d-237b-4e43-800b-734a50c12527}</destination>
 			<destination>{44ab2142-95f1-421b-ab0e-3db9155d88be}</destination>
 			<destination>{66f31164-02d5-48df-8b9a-c88ad9ed10a6}</destination>
+			<destination>{492e61f5-0c04-48a7-aeae-406ec3352e8c}</destination>
+		</relationship>
+		<relationship name="playPercentages">
+			<destination>{275282dc-1d24-47ce-8481-4c6fe55bbe27}</destination>
 		</relationship>
 	</object>
 	<object class="Automator" id="{0e897b84-287b-4e13-aa6d-11f6f4c8d9f0}">
@@ -675,6 +679,15 @@
 	<object class="SingleSound" id="{66f31164-02d5-48df-8b9a-c88ad9ed10a6}">
 		<relationship name="audioFile">
 			<destination>{209a1c48-6356-4477-8675-81b145829762}</destination>
+		</relationship>
+	</object>
+	<object class="SilenceSound" id="{492e61f5-0c04-48a7-aeae-406ec3352e8c}" />
+	<object class="PlayPercentage" id="{275282dc-1d24-47ce-8481-4c6fe55bbe27}">
+		<property name="percentage">
+			<value>40</value>
+		</property>
+		<relationship name="sound">
+			<destination>{492e61f5-0c04-48a7-aeae-406ec3352e8c}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{8f958aa1-dbd4-4450-8953-8b036aae3abc}">

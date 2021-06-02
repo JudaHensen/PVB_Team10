@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{f4a1dc51-f422-4306-9dc7-8abab1f7770a}">
+		<property name="assetPath">
+			<value>sound track under water.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>209.5298866213152</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b5f89789-239e-41c1-8f83-8f024cab654b}</destination>
+		</relationship>
+	</object>
+</objects>

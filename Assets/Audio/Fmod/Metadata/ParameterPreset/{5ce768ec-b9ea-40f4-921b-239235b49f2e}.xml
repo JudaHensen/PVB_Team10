@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{5ce768ec-b9ea-40f4-921b-239235b49f2e}">
+		<property name="name">
+			<value>Drone acc</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1f55f3a2-dea9-4934-aace-3ca6b86f7089}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6c76928e-2999-49ec-80d2-1d0a8d42a6e4}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6c76928e-2999-49ec-80d2-1d0a8d42a6e4}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

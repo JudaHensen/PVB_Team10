@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{a27ba27c-674d-4fbe-a048-fb9938017183}">
+		<property name="assetPath">
+			<value>slow oscillation.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>86.709999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b5f89789-239e-41c1-8f83-8f024cab654b}</destination>
+		</relationship>
+	</object>
+</objects>
