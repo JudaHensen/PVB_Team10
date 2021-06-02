@@ -11,6 +11,7 @@ namespace Cutscene
 
         [Header("All cutscenes.")]
         [SerializeField] private List<GameObject> _cutscenes;
+        [SerializeField] private bool _startCameraOn = true;
 
         public Action OnFinished;
 
@@ -25,14 +26,14 @@ namespace Cutscene
 
         private void Start()
         {
-            //_startCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-            //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-
-            _startCamera.enabled = true;
-
-            for (int i = 0; i < Camera.allCamerasCount; ++i)
+            if(_startCameraOn)
             {
-                if(Camera.allCameras[i] != _startCamera) Camera.allCameras[i].enabled = false;
+                _startCamera.enabled = true;
+
+                for (int i = 0; i < Camera.allCamerasCount; ++i)
+                {
+                    if (Camera.allCameras[i] != _startCamera) Camera.allCameras[i].enabled = false;
+                }
             }
         }
 
@@ -67,6 +68,10 @@ namespace Cutscene
                     _cameraReplica.nearClipPlane = 0.001f;
 
                     _currentCamera = _cameraReplica;
+                } else
+                {
+                    _startCamera.enabled = true;
+                    _currentCamera = _startCamera;
                 }
 
                 ExecuteCutscene();
@@ -92,7 +97,12 @@ namespace Cutscene
             _cameraReplica = null;
             _currentCamera = null;
 
-            Destroy(GameObject.Find("CameraReplica").gameObject);
+            if(!_currentCutscene.GetNewCamera()) try
+            {
+                Destroy(_cameraReplica.gameObject);
+            }
+            catch { }
+                
 
             _currentCutscene.Reset();
             _currentCutscene = null;
