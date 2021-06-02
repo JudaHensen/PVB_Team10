@@ -97,7 +97,6 @@ public class Sonar : MonoBehaviour
     #region Collissions
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Name: " + collider.name + " | Tag: " + collider.tag);
         if(collider.tag.ToLower() == "mine")
         {
             // Calculate distance

@@ -30,6 +30,7 @@ public class ZeemijnDetectie : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag + " | " + other.name + " | " + _isInteracting);
         if(other.transform.tag == "Zeemijn" && !_isInteracting)
         {
             Debug.Log("Entered interaction range");

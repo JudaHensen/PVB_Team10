@@ -12,6 +12,7 @@ public class ExplodeDetection : MonoBehaviour
     }
     private void OnTriggerEnter(Collider col)
     {
+        Debug.Log("Ship go boom? " + col.tag + " | " + col.name);
         if (col.CompareTag("Ship"))
         {
             // Run Game Over event voor een zeemijn raken met het schip.
