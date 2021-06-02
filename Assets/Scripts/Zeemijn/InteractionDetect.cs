@@ -31,7 +31,6 @@ public class InteractionDetect : MonoBehaviour
     {
         _canInteract = state;
         _ui.SetSprite(state);
-        Debug.Log("Can interact: " + state);
     }
 
     private void OnTriggerEnter(Collider col)

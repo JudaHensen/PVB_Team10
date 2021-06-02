@@ -78,8 +78,7 @@ namespace QuickTimeEvent
             }
             else
             {
-                Debug.Log("VICTORYYYY SCREEEEECCCHH!!!!!!!!!!!!!");
-                _input.SetInputMode(ControllerInputMode.GAMEPLAY);
+                _input.SetInputMode(ControllerInputMode.MAIN_MENU);
             }
         }
 
