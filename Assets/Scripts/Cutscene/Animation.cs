@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor.Animations;
 
 namespace Cutscene
 {
@@ -9,7 +10,7 @@ namespace Cutscene
         public string animationName;
 
         [Header("Animator which contains the needed animation.")]
-        public Animator animator;
+        public AnimatorController controller;
 
         [Header("Animation trigger to activate wanted animation.")]
         public string triggerName;

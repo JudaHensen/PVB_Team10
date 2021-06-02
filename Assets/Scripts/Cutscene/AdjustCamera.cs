@@ -53,39 +53,48 @@ namespace Cutscene
 
         void Update()
         {
-            if(_isActive)
+            try
             {
-                if(_timer.Completed()) {
-                    if(_local)
+                if (_isActive)
+                {
+                    if (_timer.Completed())
                     {
-                        _camera.transform.localPosition = _endPosition;
-                        _camera.transform.localRotation = _endRotation;
+                        if (_local)
+                        {
+                            _camera.transform.localPosition = _endPosition;
+                            _camera.transform.localRotation = _endRotation;
+                        }
+                        else
+                        {
+                            _camera.transform.position = _endPosition;
+                            _camera.transform.rotation = _endRotation;
+                        }
+
+                        _isActive = false;
                     }
                     else
                     {
-                        _camera.transform.position = _endPosition;
-                        _camera.transform.rotation = _endRotation;
+                        _timer.Update();
+
+                        float interpolation = _timer.GetTime() / _lerpTime;
+
+                        if (_local)
+                        {
+                            _camera.transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, interpolation);
+                            if (_rotate) _camera.transform.localRotation = Quaternion.Lerp(_startRotation, _endRotation, interpolation);
+                        }
+                        else
+                        {
+                            _camera.transform.position = Vector3.Lerp(_startPosition, _endPosition, interpolation);
+                            if (_rotate) _camera.transform.rotation = Quaternion.Lerp(_startRotation, _endRotation, interpolation);
+                        }
+
+
                     }
-                    
-                    _isActive = false;
                 }
-                else {
-                    _timer.Update();
-
-                    float interpolation = _timer.GetTime() / _lerpTime;
-
-                    if(_local)
-                    {
-                        _camera.transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, interpolation);
-                        if (_rotate) _camera.transform.localRotation = Quaternion.Lerp(_startRotation, _endRotation, interpolation);
-                    } else
-                    {
-                        _camera.transform.position = Vector3.Lerp(_startPosition, _endPosition, interpolation);
-                        if (_rotate) _camera.transform.rotation = Quaternion.Lerp(_startRotation, _endRotation, interpolation);
-                    }
-
-                    
-                }
+            }
+            catch {
+                // Errors while scene switching
             }
         }
 

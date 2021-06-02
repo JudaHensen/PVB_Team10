@@ -15,7 +15,7 @@ namespace MainMenu
         private float _defaultValue;
 
         [SerializeField]
-        private float _valueIncrease;
+        private float _valueIncrease = 5;
 
         private float _currentValue;
         private Slider _slider;

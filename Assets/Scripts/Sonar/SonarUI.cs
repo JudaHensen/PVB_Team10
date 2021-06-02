@@ -25,7 +25,7 @@ public class SonarUI : MonoBehaviour
     private void Awake()
     {
         // Setup variables & actions
-        Sonar sonar = GameObject.Find(_shipSonarName).GetComponent<Sonar>();
+        Sonar sonar = FindObjectOfType<Sonar>();
         sonar.UpdateSonarUI += UpdateSonarUI;
         sonar.DetectMine += DetectMine;
         sonar.RemoveMine += RemoveMine;
@@ -108,7 +108,7 @@ public class SonarUI : MonoBehaviour
                     Quaternion.identity);
 
                 mineSprite.name = $"Mine:{uniqueID}";
-                mineSprite.transform.parent = _mineDisplay;
+                mineSprite.transform.SetParent(_mineDisplay);
 
                 mineSprite.GetComponent<RectTransform>().anchoredPosition = GetPosition(sonarItem.GetMineLocation().location);
                 mineSprite.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);

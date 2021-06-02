@@ -7,12 +7,14 @@ namespace Cutscene
 {
     public class CutsceneHandler : MonoBehaviour
     {
+        [SerializeField] private Camera _startCamera;
+
         [Header("All cutscenes.")]
         [SerializeField] private List<GameObject> _cutscenes;
 
         public Action OnFinished;
 
-        private Camera _startCamera;
+        //private Camera _startCamera;
         private Camera _cameraReplica;
         private Camera _currentCamera;
 
@@ -23,17 +25,15 @@ namespace Cutscene
 
         private void Start()
         {
-            _startCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+            _startCamera = Camera.main;
+
             _startCamera.enabled = true;
 
             for (int i = 0; i < Camera.allCamerasCount; ++i)
             {
                 if(Camera.allCameras[i] != _startCamera) Camera.allCameras[i].enabled = false;
             }
-
-            StartCutscene("Test");
         }
-
 
         public void StartCutscene(string cutsceneName)
         {
@@ -51,18 +51,22 @@ namespace Cutscene
 
                 _isPlaying = true;
 
-                _startCamera.enabled = false;
+                if(_currentCutscene.GetNewCamera())
+                {
+                    _startCamera.enabled = false;
 
-                transform.position = _startCamera.transform.position;
+                    transform.position = _startCamera.transform.position;
 
-                GameObject camParent = new GameObject("CameraReplica");
-                camParent.transform.parent = transform;
+                    GameObject camParent = new GameObject("CameraReplica");
+                    camParent.transform.parent = transform;
 
-                _cameraReplica = camParent.AddComponent<Camera>();
-                _cameraReplica.CopyFrom(_startCamera);
-                _cameraReplica.enabled = true;
+                    _cameraReplica = camParent.AddComponent<Camera>();
+                    _cameraReplica.CopyFrom(_startCamera);
+                    _cameraReplica.enabled = true;
+                    _cameraReplica.nearClipPlane = 0.001f;
 
-                _currentCamera = _cameraReplica;
+                    _currentCamera = _cameraReplica;
+                }
 
                 ExecuteCutscene();
             }

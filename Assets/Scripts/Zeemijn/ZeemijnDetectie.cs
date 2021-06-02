@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,37 +7,75 @@ using Controls;
 public class ZeemijnDetectie : MonoBehaviour
 {
     private InputManager _input;
-    private float _range = 5000f;
     public Action PlantExplosive;
-    private bool detectedMine = false;
+    private bool _detectedMine = false;
+    private bool _isInteracting = false;
+    public Action<bool> CanInteract;
+    public Action<Transform> InteractedMine;
 
-    private void Start()
+    private Transform _mine;
+
+    private void Awake()
     {
         _input = FindObjectOfType<InputManager>();
         _input.Interact += StartQuickTimeEvent;
     }
-    void FixedUpdate()
-    {
-        RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _range))
+    private void SetDetection(bool state)
+    {
+        Debug.Log("Detection");
+        CanInteract?.Invoke(state);
+        _detectedMine = state;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == "Zeemijn" && !_isInteracting)
         {
-            // Draw line in scene view to visualize raycast
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
-            detectedMine = true;
+            Debug.Log("Entered interaction range");
+            SetDetection(true);
+            _mine = other.transform;
         }
-        else
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Zeemijn")
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _range, Color.red);
-            detectedMine = false;
+            SetDetection(false);
+            _mine = null;
         }
+        
     }
 
     void StartQuickTimeEvent()
     {
-        if (detectedMine)
+        if (_detectedMine)
         {
+            Debug.Log("Starting QTE");    
             _input.SetInputMode(ControllerInputMode.QUICK_TIME);
+            InteractedMine?.Invoke(_mine);
+            _isInteracting = true;
+            SetDetection(false);
         }
     }
 }
+
+
+//private float _range = 5000f;
+
+// Raycast Method
+
+//RaycastHit hit;
+
+//if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _range))
+//{
+//    // Draw line in scene view to visualize raycast
+//    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+//    _detectedMine = true;
+//}
+//else
+//{
+//    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _range, Color.red);
+//    _detectedMine = false;
+//}

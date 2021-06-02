@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 
 namespace Controls
 {
@@ -16,11 +17,18 @@ namespace Controls
         public float TriggerRight;
 
         public Action ToggleMenu;
+        public Action MenuInteract;
         public Action Interact;
+
+        // Main Menu
+        public Action AnyKey;
+        public Action Back;
 
         public Action<QuickTimeInputKey> QuickTimeInput;
 
         public Action<ControllerInputMode> InputMode;
+        public Action<ControllerType> UsedController;
+        private ControllerType controllerUsed;
         void Awake()
         {
             controls = new PlayerControls();
@@ -35,31 +43,77 @@ namespace Controls
             controls.Gameplay.TriggerRight.canceled += ctx => TriggerRight = 0f;
 
             controls.Gameplay.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
+            controls.Gameplay.StickLeft.canceled += ctx => StickLeft = new Vector2();
             controls.Gameplay.StickRight.performed += ctx => StickRight = ctx.ReadValue<Vector2>();
+            controls.Gameplay.StickRight.canceled += ctx => StickRight = new Vector2();
 
             // QuickTime event inputs
             controls.QuickTime.OpenMenu.performed += ctx => ToggleMenu();
 
-            controls.QuickTime.Q1.performed += ctx => QuickTimeInput(QuickTimeInputKey.NORTH);
-            controls.QuickTime.Q2.performed += ctx => QuickTimeInput(QuickTimeInputKey.EAST);
-            controls.QuickTime.Q3.performed += ctx => QuickTimeInput(QuickTimeInputKey.SOUTH);
-            controls.QuickTime.Q4.performed += ctx => QuickTimeInput(QuickTimeInputKey.WEST);
+            controls.QuickTime.Q1.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.NORTH);
+            controls.QuickTime.Q2.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.EAST);
+            controls.QuickTime.Q3.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.SOUTH);
+            controls.QuickTime.Q4.performed += ctx => QuickTimeInput?.Invoke(QuickTimeInputKey.WEST);
+
+            // MainMenu Inputs
+            controls.MainMenu.AnyKey.performed += ctx => AnyKey?.Invoke();
+            controls.MainMenu.Interact.performed += ctx => MenuInteract?.Invoke();
+            controls.MainMenu.Back.performed += ctx => Back?.Invoke();
+
+            controls.MainMenu.StickLeft.performed += ctx => StickLeft = ctx.ReadValue<Vector2>();
+            controls.MainMenu.StickLeft.canceled += ctx => StickLeft = new Vector2();
+
+            // Start check voor controller
+            CheckGamepad();
+            InvokeRepeating("CheckGamepad", 1f, 1f);
+            DontDestroyOnLoad(gameObject);
+        }
+
+        private void CheckGamepad()
+        {
+            string gamepad;
+
+            try
+            {
+                gamepad = Gamepad.current.name;
+                //Debug.Log(Gamepad.current.name);
+            }
+            catch
+            {
+                Debug.LogWarning("NO CONTROLLER FOUND! Error");
+                return;
+            }
+
+            if (gamepad.Contains("DualShock4"))
+            {
+                UsedController?.Invoke(ControllerType.PS4);
+                controllerUsed = ControllerType.PS4;
+            }
+            else if (gamepad.Contains("XInputController"))
+            {
+                UsedController?.Invoke(ControllerType.XBOX);
+                controllerUsed = ControllerType.XBOX;
+            }
         }
 
         // change input mapping depending on gameplay
         public void SetInputMode(ControllerInputMode mode)
         {
+            controls.Gameplay.Disable();
+            controls.QuickTime.Disable();
+            controls.MainMenu.Disable();
             switch (mode)
             {
                 case ControllerInputMode.GAMEPLAY:
                     controls.Gameplay.Enable();
-                    controls.QuickTime.Disable();
-                    Debug.Log("Set to GP");
+                    //Debug.Log("Set to GP");
                     break;
                 case ControllerInputMode.QUICK_TIME:
-                    controls.Gameplay.Disable();
                     controls.QuickTime.Enable();
                     Debug.Log("Set to QTE");
+                    break;
+                case ControllerInputMode.MAIN_MENU:
+                    controls.MainMenu.Enable();
                     break;
             }
 
@@ -67,15 +121,21 @@ namespace Controls
 
         }
 
+        public ControllerType GetControllerType()
+        {
+            return controllerUsed;
+        }
+
         private void OnEnable()
         {
-            controls.Gameplay.Enable();
+            controls.MainMenu.Enable();
         }
 
         private void OnDisable()
         {
             controls.Gameplay.Disable();
             controls.QuickTime.Disable();
+            controls.MainMenu.Disable();
         }
     }
 }

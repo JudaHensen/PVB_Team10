@@ -6,7 +6,7 @@ using Controls;
 public class DroneMovement : MonoBehaviour
 {
     private float SteerPower = 10f;
-    private float Power = 100f;
+    private float Power = 1000f;
     private float rotationX = 0f;
     private float rotationY = 0f;
 
@@ -14,7 +14,9 @@ public class DroneMovement : MonoBehaviour
 
     public Rigidbody DroneRb;
 
+    [SerializeField]
     private Vector2 _movex = new Vector2();
+    [SerializeField]
     private Vector2 _movey = new Vector2();
 
     private InputManager _input;

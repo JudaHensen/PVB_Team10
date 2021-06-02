@@ -15,13 +15,14 @@ namespace UserInterface
 
         private bool _isTyping;
 
-        private void Start()
+        private void Awake()
         {
             _text = GetComponent<Text>();
         }
 
         public void TypeMessage(string message, float typeSpeed)
         {
+            Clear();
             _typeSpeed = typeSpeed;
             _message = message.ToCharArray();
 
