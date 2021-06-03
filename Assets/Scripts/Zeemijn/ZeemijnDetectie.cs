@@ -11,7 +11,7 @@ public class ZeemijnDetectie : MonoBehaviour
     private bool _detectedMine = false;
     private bool _isInteracting = false;
     public Action<bool> CanInteract;
-    public Action<Transform> InteractedMine;
+    public Action InteractedMine;
 
     private Transform _mine;
 
@@ -55,7 +55,7 @@ public class ZeemijnDetectie : MonoBehaviour
         {
             Debug.Log("Starting QTE");    
             _input.SetInputMode(ControllerInputMode.QUICK_TIME);
-            InteractedMine?.Invoke(_mine);
+            InteractedMine?.Invoke();
             _isInteracting = true;
             SetDetection(false);
         }

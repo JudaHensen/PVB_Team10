@@ -35,6 +35,7 @@ namespace QuickTimeEvent
 
             _input = FindObjectOfType<InputManager>();
             _input.InputMode += StartEvent;
+
         }
 
         private async void StartEvent(ControllerInputMode mode)

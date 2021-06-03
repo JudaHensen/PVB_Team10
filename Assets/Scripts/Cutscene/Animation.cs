@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
-using UnityEditor.Animations;
 
 namespace Cutscene
 {
     [CreateAssetMenu(fileName = "Transition", menuName = "Cutscene/Animation", order = 2)]
-    public class Animation : ScriptableObject
+    public class Animation : MonoBehaviour
     {
         [Header("Animation name for debugging.")]
         public string animationName;
 
         [Header("Animator which contains the needed animation.")]
-        public AnimatorController controller;
+        public Animator controller;
 
         [Header("Animation trigger to activate wanted animation.")]
         public string triggerName;

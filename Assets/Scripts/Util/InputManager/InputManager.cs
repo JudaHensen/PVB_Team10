@@ -16,6 +16,8 @@ namespace Controls
         public float TriggerLeft;
         public float TriggerRight;
 
+        public bool isDebugging;
+
         public Action ToggleMenu;
         public Action MenuInteract;
         public Action Interact;
@@ -128,6 +130,11 @@ namespace Controls
 
         private void OnEnable()
         {
+            if (isDebugging)
+            {
+                controls.Gameplay.Enable();
+                return;
+            }
             controls.MainMenu.Enable();
         }
 

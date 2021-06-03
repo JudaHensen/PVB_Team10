@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: QTE_FAIL_Chonky
   m_EditorClassIdentifier: 
   animationName: QTE_FAIL_CHONKY
-  controller: {fileID: 9100000, guid: 314d15b52659b1545b049bfc7c5d16e3, type: 2}
+  controller: {fileID: 9100000, guid: 25d3d58caa9e963419f8e0469dc533f8, type: 2}
   triggerName: QTE_FAIL
   triggerDelay: 0
