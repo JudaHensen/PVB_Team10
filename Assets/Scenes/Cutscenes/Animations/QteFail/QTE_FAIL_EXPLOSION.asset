@@ -15,4 +15,4 @@ MonoBehaviour:
   animationName: QTE_FAIL_EXPLOSION
   controller: {fileID: 9100000, guid: 28a983dcaf3fc0e4abb16d998810c90c, type: 2}
   triggerName: Explode
-  triggerDelay: 4000
+  triggerDelay: 3600
