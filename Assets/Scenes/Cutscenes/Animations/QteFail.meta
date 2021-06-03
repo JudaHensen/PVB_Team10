@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/Cutscenes/Animations/QteFail.meta
 guid: e932b629c28a0e5468417339f2bcbb54
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 9f8b78a5aec7e0a489a3e2ba8f503287
+PrefabImporter:
+>>>>>>> origin/mapPolishing:Assets/Art/Prefab/Bubble.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
