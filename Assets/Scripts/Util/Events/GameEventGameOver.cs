@@ -10,7 +10,7 @@ namespace GameEventManagment
         
         private void Start()
         {
-            _evtManager = FindObjectOfType<GameEventManager>();
+            _evtManager = GetComponent<GameEventManager>();
         }
         
         public void Run(int ID)
