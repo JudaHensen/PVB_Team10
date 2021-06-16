@@ -21,6 +21,7 @@ namespace Controls
         public Action ToggleMenu;
         public Action MenuInteract;
         public Action Interact;
+        public Action Boost;
 
         // Main Menu
         public Action AnyKey;
@@ -38,6 +39,7 @@ namespace Controls
             // Gameplay Inputs
             controls.Gameplay.Interact.performed += ctx => Interact?.Invoke(); // ?.Invoke() Check of de Action wel gebruikt wordt om errors te voorkomen.
             controls.Gameplay.OpenMenu.performed += ctx => ToggleMenu?.Invoke();
+            controls.Gameplay.Boost.performed += ctx => Boost?.Invoke();
 
             controls.Gameplay.TriggerLeft.performed += ctx => TriggerLeft = ctx.ReadValue<float>();
             controls.Gameplay.TriggerLeft.canceled += ctx => TriggerLeft = 0f;

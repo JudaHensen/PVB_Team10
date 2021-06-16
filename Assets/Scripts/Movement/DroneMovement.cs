@@ -7,8 +7,12 @@ public class DroneMovement : MonoBehaviour
 {
     private float SteerPower = 10f;
     private float Power = 1000f;
+    private float _powerModifier = 1f;
     private float rotationX = 0f;
     private float rotationY = 0f;
+    private bool _canBoost = true;
+    private float _boostCoolDown = 5f;
+    private float _boostPower = 3f;
 
     public Transform Motor;
 
@@ -24,6 +28,8 @@ public class DroneMovement : MonoBehaviour
     {
         _input = FindObjectOfType<InputManager>();
         DroneRb = GetComponent<Rigidbody>();
+
+        _input.Boost += SetPowerModifier;
     }
 
     private void FixedUpdate()
@@ -40,7 +46,7 @@ public class DroneMovement : MonoBehaviour
 
 
         //Forward Movement
-        DroneRb.AddForce(transform.forward * _input.TriggerRight * Power * Time.fixedDeltaTime);
+        DroneRb.AddForce(transform.forward * _input.TriggerRight * (Power * _powerModifier) * Time.fixedDeltaTime);
         //Back Movement
         DroneRb.AddForce(transform.forward * -_input.TriggerLeft * Power * Time.fixedDeltaTime);
         // Steering left right
@@ -50,5 +56,31 @@ public class DroneMovement : MonoBehaviour
         //caps rotation
         transform.localRotation = Quaternion.Euler(-rotationX, rotationY, 0f);
 
+    }
+
+    private void SetPowerModifier()
+    {
+        if(_canBoost)
+        {
+            _powerModifier = _boostPower;
+            Invoke("ResetPowerModifier", _boostCoolDown);
+            _canBoost = false;
+        }
+    }
+
+    private void ResetPowerModifier()
+    {
+        _powerModifier = 1;
+        Invoke("ResetCanBoost", _boostCoolDown);
+    }
+
+    private void ResetCanBoost()
+    {
+        _canBoost = true;
+    }
+
+    public bool GetCanBoost()
+    {
+        return _canBoost;
     }
 }

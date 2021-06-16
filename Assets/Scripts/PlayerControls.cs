@@ -65,6 +65,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d7576e0-4a9e-4b56-b23c-99956378e583"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -131,6 +139,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""TriggerRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96c1cf4a-58b7-493b-a6fd-7119633b7c88"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Boost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -500,6 +519,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_StickLeft = m_Gameplay.FindAction("StickLeft", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_OpenMenu = m_Gameplay.FindAction("OpenMenu", throwIfNotFound: true);
+        m_Gameplay_Boost = m_Gameplay.FindAction("Boost", throwIfNotFound: true);
         // QuickTime
         m_QuickTime = asset.FindActionMap("QuickTime", throwIfNotFound: true);
         m_QuickTime_Q1 = m_QuickTime.FindAction("Q1", throwIfNotFound: true);
@@ -568,6 +588,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_StickLeft;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_OpenMenu;
+    private readonly InputAction m_Gameplay_Boost;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -578,6 +599,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @StickLeft => m_Wrapper.m_Gameplay_StickLeft;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @OpenMenu => m_Wrapper.m_Gameplay_OpenMenu;
+        public InputAction @Boost => m_Wrapper.m_Gameplay_Boost;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -605,6 +627,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @OpenMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenMenu;
                 @OpenMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenMenu;
                 @OpenMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenMenu;
+                @Boost.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBoost;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -627,6 +652,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @OpenMenu.started += instance.OnOpenMenu;
                 @OpenMenu.performed += instance.OnOpenMenu;
                 @OpenMenu.canceled += instance.OnOpenMenu;
+                @Boost.started += instance.OnBoost;
+                @Boost.performed += instance.OnBoost;
+                @Boost.canceled += instance.OnBoost;
             }
         }
     }
@@ -770,6 +798,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnStickLeft(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnOpenMenu(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
     }
     public interface IQuickTimeActions
     {
